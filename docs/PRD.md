@@ -38,6 +38,8 @@ The first release is English-first. The coach may explain concepts in the learne
 - Speaking feedback from audio when supported, with transcript-only fallback.
 - Reading and Listening practice using original source material.
 - A full-format diagnostic plan assembled from task-level activities.
+- Evidence-based study plans, spaced-review recommendations, and progress summaries.
+- Session-only operation by default with an optional, consented portable JSON learner-state export.
 - Explicit non-affiliation, copyright, and score-estimate safeguards.
 - Offline contract tests and behavior-oriented evaluation cases.
 
@@ -45,7 +47,7 @@ The first release is English-first. The coach may explain concepts in the learne
 
 - Claims of official score equivalence or score prediction.
 - Speech recognition, text-to-speech, user accounts, hosted storage, or analytics services.
-- Automated spaced repetition and longitudinal learner models.
+- Automated reminders, server-side longitudinal learner models, and background notifications.
 - A complete simulated test UI, payments, classrooms, or teacher dashboards.
 - Reproduction or distribution of unlicensed ETS questions, passages, prompts, audio, transcripts, sample responses, answer keys, rubrics, directions, or graphics.
 
@@ -75,6 +77,8 @@ The coach confirms time and modality constraints, samples relevant task types, r
 | FR-6 | Communicate score uncertainty | Every numeric estimate names its scale and non-official status |
 | FR-7 | Remain source-traceable | Changeable format facts link to official ETS sources |
 | FR-8 | Support multilingual explanation | Explanations may follow learner preference without replacing required English production |
+| FR-9 | Generate evidence-based plans | Diagnostic coverage, priorities, activities, and success checks remain traceable to observed evidence |
+| FR-10 | Support optional continuity | Valid portable state can be exported and resumed without hidden or mandatory storage |
 
 ## Non-functional requirements
 
@@ -92,7 +96,7 @@ The coach confirms time and modality constraints, samples relevant task types, r
 - Link to official material rather than copying protected content.
 - Decline requests for leaked, recalled, or live test questions and redirect to original practice.
 - Avoid guarantees about admission, visa, academic, or official score outcomes.
-- Obtain learner consent before any future persistent storage of responses or audio.
+- Obtain learner consent before creating portable state or using any host-specific persistent storage; exclude raw responses and audio from the portable schema.
 
 ## Success measures
 
@@ -116,7 +120,6 @@ The coach confirms time and modality constraints, samples relevant task types, r
 - What independent public brand should replace the working repository identifier?
 - Which qualitative or numeric practice scale should be used per task after sufficient validation?
 - Which audio-capable agent environments should receive maintained Speaking adapters for v1.0?
-- What opt-in, privacy-preserving learner-state format should support progress tracking?
 - Which agent environments will receive maintained installation adapters for v1.0?
 
 ## Trademark notice

@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-10-12T19:00:00Z",
+  "consent": {
+    "storage_mode": "portable-export",
+    "granted_at": "2026-10-12T18:45:00Z",
+    "scopes": [
+      "preferences",
+      "goal",
+      "observations",
+      "plan",
+      "review_queue",
+      "progress_summaries"
+    ]
+  },
+  "preferences": {
+    "explanation_language": "Persian",
+    "weekly_minutes": 180,
+    "sessions_per_week": 4,
+    "modalities": ["text", "audio"]
+  },
+  "goal": {
+    "purpose": "Build balanced academic English performance before the target test date.",
+    "target_date": "2027-01-15",
+    "target_sections": ["reading", "listening", "writing", "speaking"]
+  },
+  "observations": [
+    {
+      "observed_at": "2026-10-12T18:30:00Z",
+      "task_id": "writing.write-an-email",
+      "modality": "text",
+      "evidence_summary": "Covered all prompt requirements; the request was clear but article control was inconsistent.",
+      "strengths": ["Complete task coverage", "Specific request"],
+      "priorities": ["Article control in singular noun phrases"],
+      "confidence": "medium"
+    }
+  ],
+  "plan": {
+    "generated_at": "2026-10-12T19:00:00Z",
+    "horizon_weeks": 2,
+    "provisional": true,
+    "activities": [
+      {
+        "task_id": "writing.write-an-email",
+        "minutes": 25,
+        "focus": "Articles in problem-impact-request emails",
+        "method": "Draft one original email, highlight singular count nouns, and revise each determiner before feedback.",
+        "success_check": "No unsupported missing or extra article in ten reviewed noun phrases."
+      },
+      {
+        "task_id": "speaking.take-an-interview",
+        "minutes": 20,
+        "focus": "Establish a Speaking baseline",
+        "method": "Record two original interview answers with one reason and one example each.",
+        "success_check": "Both responses directly answer the question and contain connected support."
+      }
+    ]
+  },
+  "review_queue": [
+    {
+      "task_id": "writing.write-an-email",
+      "focus": "Article control in singular noun phrases",
+      "due_on": "2026-10-14",
+      "interval_days": 2,
+      "last_outcome": "new"
+    }
+  ],
+  "progress_summaries": []
+}

@@ -48,10 +48,10 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 
 ## 5 — Learning intelligence v0.5.0
 
-- [ ] Define a privacy-preserving, opt-in learner-state schema.
-- [ ] Add diagnostic assembly and study-plan generation.
-- [ ] Add spaced-review recommendations and progress summaries.
-- [ ] Test state portability across supported hosts.
+- [x] Define a privacy-preserving, opt-in learner-state schema.
+- [x] Add diagnostic assembly and study-plan generation.
+- [x] Add spaced-review recommendations and progress summaries.
+- [x] Test state portability across supported hosts.
 
 **Exit:** learners can continue a plan without hidden or mandatory data collection.
 

@@ -1,0 +1,344 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Learner State v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "updated_at",
+    "consent"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["storage_mode", "granted_at", "scopes"],
+      "properties": {
+        "storage_mode": {
+          "enum": ["session-only", "portable-export"]
+        },
+        "granted_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "scopes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": ["preferences", "goal", "observations", "plan", "review_queue", "progress_summaries"]
+          }
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["explanation_language", "weekly_minutes", "sessions_per_week", "modalities"],
+      "properties": {
+        "explanation_language": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 40
+        },
+        "weekly_minutes": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 1000
+        },
+        "sessions_per_week": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 14
+        },
+        "modalities": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["text", "audio", "transcript"]
+          }
+        }
+      }
+    },
+    "goal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["purpose", "target_date", "target_sections"],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "target_date": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "target_sections": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["reading", "listening", "writing", "speaking"]
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    },
+    "plan": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/plan"
+        }
+      ]
+    },
+    "review_queue": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/review"
+      }
+    },
+    "progress_summaries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/progress"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "consent": {
+            "properties": {
+              "storage_mode": {
+                "const": "portable-export"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "consent": {
+            "properties": {
+              "granted_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "scopes": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "task_id": {
+      "enum": [
+        "reading.complete-the-words",
+        "reading.read-in-daily-life",
+        "reading.read-an-academic-passage",
+        "listening.listen-and-choose-a-response",
+        "listening.listen-to-a-conversation",
+        "listening.listen-to-an-announcement",
+        "listening.listen-to-an-academic-talk",
+        "writing.build-a-sentence",
+        "writing.write-an-email",
+        "writing.academic-discussion",
+        "speaking.listen-and-repeat",
+        "speaking.take-an-interview"
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observed_at", "task_id", "modality", "evidence_summary", "strengths", "priorities", "confidence"],
+      "properties": {
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "task_id": {
+          "$ref": "#/$defs/task_id"
+        },
+        "modality": {
+          "enum": ["text", "audio", "transcript", "mixed"]
+        },
+        "evidence_summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "strengths": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "priorities": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "confidence": {
+          "enum": ["low", "medium", "high"]
+        }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generated_at", "horizon_weeks", "provisional", "activities"],
+      "properties": {
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "horizon_weeks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "provisional": {
+          "type": "boolean"
+        },
+        "activities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["task_id", "minutes", "focus", "method", "success_check"],
+            "properties": {
+              "task_id": {
+                "$ref": "#/$defs/task_id"
+              },
+              "minutes": {
+                "type": "integer",
+                "minimum": 5,
+                "maximum": 180
+              },
+              "focus": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "method": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              },
+              "success_check": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            }
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task_id", "focus", "due_on", "interval_days", "last_outcome"],
+      "properties": {
+        "task_id": {
+          "$ref": "#/$defs/task_id"
+        },
+        "focus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "due_on": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "interval_days": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 365
+        },
+        "last_outcome": {
+          "enum": ["new", "retry", "partial", "met"]
+        }
+      }
+    },
+    "progress": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["period_start", "period_end", "completed_activities", "strengths", "priorities", "limitations", "next_focus"],
+      "properties": {
+        "period_start": {
+          "type": "string",
+          "format": "date"
+        },
+        "period_end": {
+          "type": "string",
+          "format": "date"
+        },
+        "completed_activities": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "strengths": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "priorities": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "next_focus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      }
+    }
+  }
+}

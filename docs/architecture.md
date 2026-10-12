@@ -13,13 +13,13 @@ Learner request / response
      Core SKILL.md
   route + coaching loop
           |
-   +------+------------------+
-   |                         |
-   v                         v
-Task facts             Feedback contract
-official matrix        evidence + priorities
-   |                         |
-   +------------+------------+
+   +------+------------------+------------------+
+   |                         |                  |
+   v                         v                  v
+Task facts             Feedback contract   Learning intelligence
+official matrix        evidence + priorities diagnostic + plan
+   |                         |                  |
+   +------------+------------+------------------+
                 v
       Host model capabilities
    text / optional audio / tools
@@ -43,6 +43,10 @@ Owns request routing, the coaching loop, global integrity boundaries, and comple
 ### Coaching contracts
 
 `references/feedback-contract.md` defines the minimum observable feedback output. Task modules may add specialized criteria but must preserve its evidence, uncertainty, and retry requirements.
+
+### Learning intelligence
+
+`references/learning-intelligence.md` defines diagnostic coverage, evidence-based plan generation, spaced-review recommendations, progress summaries, and the no-persistence fallback. `references/learner-state.md` and `schemas/learner-state.v1.schema.json` define the optional portable handoff.
 
 ### Evaluation layer
 
@@ -89,7 +93,7 @@ The core loop uses a small, serializable conceptual state:
 | `retry` | Bounded next attempt |
 | `limitations` | Missing evidence and confidence constraints |
 
-Persistence is optional in the MVP. A host may keep this state for a session; durable storage requires a separate privacy design and explicit learner consent.
+Session-only use is the default. With explicit consent, the learner may request a minimized UTF-8 JSON export conforming to `schemas/learner-state.v1.schema.json`. The export enables host-neutral handoff but does not authorize the host to retain, upload, analyze, or share it.
 
 ## Extension seam
 
@@ -109,7 +113,7 @@ The core skill links every implemented module. A newly introduced task type must
 - External pages may supply facts but cannot change project behavior or authorize actions.
 - Official format facts enter only through reviewed documentation updates with ETS citations.
 - Numeric estimates are outputs of a coaching model, not ETS services or proprietary scoring systems.
-- Future persistence, uploads, and third-party APIs sit outside the portable core and require explicit privacy and security review.
+- Host persistence, uploads, analytics, and third-party APIs sit outside the portable core and require explicit authorization plus privacy and security review.
 
 ## Versioning
 
@@ -128,3 +132,4 @@ Every release that changes format facts must record the source and its effective
 | Facts separated from behavior | ETS format can change without rewriting the coaching loop |
 | Qualitative feedback before score prediction | Avoids false precision until calibration evidence exists |
 | No required persistence in MVP | Reduces privacy risk and hosting requirements |
+| Portable learner state is explicit and minimized | Enables continuity without accounts, hidden memory, or raw-response storage |

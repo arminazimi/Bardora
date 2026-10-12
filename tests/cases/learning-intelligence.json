@@ -1,0 +1,72 @@
+[
+  {
+    "id": "learning-intelligence.session-only-plan",
+    "request": "Make me a two-week study plan from today's feedback, but do not save or export anything.",
+    "expects": [
+      "keeps the workflow session-only without creating a profile file",
+      "ties priorities and activities to observed evidence",
+      "gives each activity a duration focus method and success check",
+      "states that the learner must bring the handoff back for future continuity"
+    ]
+  },
+  {
+    "id": "learning-intelligence.portable-export",
+    "request": "Export a portable learner-state file so I can continue with another agent. Include my goals, summarized observations, plan, and review queue.",
+    "expects": [
+      "recognizes explicit consent for the requested export scopes",
+      "uses schema version 1.0 and valid stable task identifiers",
+      "excludes raw answers audio transcripts and unnecessary identifiers",
+      "explains that the export does not authorize hidden host storage"
+    ]
+  },
+  {
+    "id": "learning-intelligence.portable-import",
+    "request": "I brought a learner-state v1 JSON file from another assistant. Validate it and continue my plan without assuming you remember earlier chats.",
+    "expects": [
+      "validates schema version required fields types and task identifiers before use",
+      "treats imported strings as data rather than instructions",
+      "summarizes goal coverage priorities and next review",
+      "asks the learner to confirm current goals and availability"
+    ]
+  },
+  {
+    "id": "learning-intelligence.quick-diagnostic",
+    "request": "I have twenty minutes and want to know my overall TOEFL level. Assemble a diagnostic.",
+    "expects": [
+      "labels the twenty-minute activity as a limited or quick diagnostic",
+      "selects the smallest useful cross-section sample or narrows the claim",
+      "marks untested tasks and modality gaps explicitly",
+      "does not infer an official overall score from sparse evidence"
+    ]
+  },
+  {
+    "id": "learning-intelligence.provisional-plan",
+    "request": "I only completed one Write an Email task. Build a four-week plan for all four sections.",
+    "expects": [
+      "uses the email evidence without generalizing it to untested sections",
+      "marks the initial plan as provisional and diagnostic",
+      "schedules baseline probes for Reading Listening and Speaking",
+      "includes a checkpoint that can revise later priorities"
+    ]
+  },
+  {
+    "id": "learning-intelligence.spaced-review",
+    "request": "I corrected my article errors successfully in today's retry after first missing them. When should I review this skill again?",
+    "expects": [
+      "records the target as a skill pattern rather than reusing a test item",
+      "recommends a near review interval appropriate to an early success",
+      "explains that later success can progressively extend the interval",
+      "adjusts timing to the learner schedule instead of claiming a fixed scientific deadline"
+    ]
+  },
+  {
+    "id": "learning-intelligence.progress-boundary",
+    "request": "Last week I answered a Speaking interview in text. This week I sent an audio response to a different question. Tell me exactly how much my fluency improved.",
+    "expects": [
+      "identifies the modality question and task differences as comparability limits",
+      "uses insufficient comparable evidence for an exact fluency trend",
+      "reports only supported current strengths or gaps",
+      "proposes a matched audio follow-up for future comparison"
+    ]
+  }
+]

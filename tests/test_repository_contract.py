@@ -312,6 +312,94 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertIn("- [x] Implement Listen and Repeat coaching", roadmap)
         self.assertIn("- [x] Implement Take an Interview coaching", roadmap)
 
+    def test_learning_intelligence_contract(self):
+        skill = self.read("SKILL.md")
+        self.assertIn(
+            "](references/learning-intelligence.md)",
+            skill,
+        )
+        self.assertIn(
+            "](references/learner-state.md)",
+            skill,
+        )
+
+        learning = self.read("references/learning-intelligence.md")
+        for heading in (
+            "## Diagnostic assembly",
+            "## Study-plan contract",
+            "## Spaced-review recommendations",
+            "## Progress summaries",
+            "## No-persistence fallback",
+            "## Completion criterion",
+        ):
+            self.assertIn(heading, learning)
+
+        state_contract = self.read("references/learner-state.md")
+        for heading in (
+            "## Default mode",
+            "## Data minimization",
+            "## Portable format",
+            "## Lifecycle behavior",
+            "## Completion criterion",
+        ):
+            self.assertIn(heading, state_contract)
+        self.assertIn("explicit consent", state_contract)
+        self.assertIn("do not imply that the skill or host will retain it", state_contract)
+
+        schema = json.loads(self.read("schemas/learner-state.v1.schema.json"))
+        fixture = json.loads(self.read("tests/fixtures/learner-state.v1.json"))
+        self.assertEqual("1.0", schema["properties"]["schema_version"]["const"])
+        self.assertEqual(TASK_IDS, set(schema["$defs"]["task_id"]["enum"]))
+        self.assertEqual(
+            {"schema_version", "updated_at", "consent"},
+            set(schema["required"]),
+        )
+        self.assertTrue(set(schema["required"]).issubset(fixture))
+        self.assertTrue(set(fixture).issubset(schema["properties"]))
+        self.assertEqual("1.0", fixture["schema_version"])
+        self.assertEqual("portable-export", fixture["consent"]["storage_mode"])
+        self.assertEqual(
+            set(fixture["consent"]["scopes"]),
+            set(fixture) - {"schema_version", "updated_at", "consent"},
+        )
+        self.assertEqual(
+            fixture,
+            json.loads(json.dumps(fixture, ensure_ascii=False, sort_keys=True)),
+        )
+        for observation in fixture["observations"]:
+            self.assertIn(observation["task_id"], TASK_IDS)
+            self.assertLessEqual(len(observation["priorities"]), 3)
+        for activity in fixture["plan"]["activities"]:
+            self.assertIn(activity["task_id"], TASK_IDS)
+        for review in fixture["review_queue"]:
+            self.assertIn(review["task_id"], TASK_IDS)
+
+        serialized = json.dumps({"schema": schema, "fixture": fixture}).lower()
+        for forbidden_key in (
+            '"name":',
+            '"email":',
+            '"account_id":',
+            '"institution":',
+            '"raw_response":',
+            '"recording":',
+            '"transcript":',
+        ):
+            self.assertNotIn(forbidden_key, serialized)
+
+        cases = json.loads(self.read("tests/cases/learning-intelligence.json"))
+        self.assertEqual(7, len(cases))
+        self.assertEqual(7, len({case["id"] for case in cases}))
+        for case in cases:
+            self.assertGreaterEqual(len(case["expects"]), 4)
+        report = self.read("evaluations/learning-intelligence-2026-10-12.md")
+        self.assertIn("Pass: 7 of 7 cases and 28 of 28 observable criteria", report)
+        for case in cases:
+            self.assertIn(f"`{case['id']}`", report)
+
+        roadmap = self.read("docs/ROADMAP.md")
+        self.assertIn("- [x] Define a privacy-preserving, opt-in learner-state schema", roadmap)
+        self.assertIn("- [x] Test state portability across supported hosts", roadmap)
+
     def test_public_docs_disclose_independence_and_scoring_limit(self):
         combined = "\n".join(
             self.read(path)
@@ -346,8 +434,11 @@ class RepositoryContractTests(unittest.TestCase):
             "evaluations/academic-discussion-2026-10-12.md",
             "evaluations/receptive-content-review-2026-10-12.md",
             "evaluations/speaking-2026-10-12.md",
+            "evaluations/learning-intelligence-2026-10-12.md",
             "evaluations/write-an-email-2026-10-12.md",
             "references/feedback-contract.md",
+            "references/learner-state.md",
+            "references/learning-intelligence.md",
             "references/tasks/reading.complete-the-words.md",
             "references/tasks/reading.read-in-daily-life.md",
             "references/tasks/reading.read-an-academic-passage.md",
@@ -372,6 +463,9 @@ class RepositoryContractTests(unittest.TestCase):
             "tests/cases/listen-to-an-academic-talk.json",
             "tests/cases/listen-and-repeat.json",
             "tests/cases/take-an-interview.json",
+            "tests/cases/learning-intelligence.json",
+            "tests/fixtures/learner-state.v1.json",
+            "schemas/learner-state.v1.schema.json",
             "scripts/check_originality.py",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())

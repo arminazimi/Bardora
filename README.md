@@ -32,6 +32,9 @@ docs/toefl-2026-task-matrix.md        ETS-sourced 2026 format matrix
 docs/research/                         Dated official-source audits
 docs/ROADMAP.md                       Delivery phases and completion criteria
 references/feedback-contract.md       Shared coaching output contract
+references/learning-intelligence.md   Diagnostics, plans, review, and progress
+references/learner-state.md           Consent and portable-state lifecycle
+schemas/learner-state.v1.schema.json  Host-neutral learner-state contract
 skills/toefl-writing-2026-coach/      Exact vendored Writing implementation
 evaluations/                           Dated behavior-evaluation reports
 tests/cases/core.json                 Behavior-oriented evaluation cases
