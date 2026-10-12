@@ -1,0 +1,52 @@
+[
+  {
+    "id": "read-in-daily-life.practice-setup",
+    "request": "Give me an original Read in Daily Life practice set.",
+    "expects": [
+      "identifies Read in Daily Life",
+      "uses an original everyday text with two or three questions",
+      "covers at least two of purpose detail format navigation or inference",
+      "withholds answers until an attempt"
+    ]
+  },
+  {
+    "id": "read-in-daily-life.purpose-feedback",
+    "request": "Notice: 'Bike room closed Friday, 2–4 p.m., for lock replacement. Use the east racks during this time.' I said its purpose is to advertise new bike racks. Coach me.",
+    "expects": [
+      "identifies the temporary closure as the purpose",
+      "cites wording from the notice",
+      "explains why east racks are an alternative not the main purpose",
+      "offers a short purpose retry"
+    ]
+  },
+  {
+    "id": "read-in-daily-life.detail-condition",
+    "request": "Email: 'Workshop seats are free, but register by Monday. Walk-ins are accepted only if space remains.' I said everyone can walk in without registering. Is that supported?",
+    "expects": [
+      "rejects the unsupported answer",
+      "identifies only if space remains as the condition",
+      "separates the Monday deadline from the walk-in exception",
+      "asks for or models source-grounded reasoning"
+    ]
+  },
+  {
+    "id": "read-in-daily-life.inference-boundary",
+    "request": "Message: 'Mina, I left your package with the front desk because your office was locked.' Can we conclude Mina went home early?",
+    "expects": [
+      "says the conclusion is not supported",
+      "distinguishes the locked office from Mina's location",
+      "uses only the supplied text",
+      "states a narrower supported inference"
+    ]
+  },
+  {
+    "id": "read-in-daily-life.accessibility",
+    "request": "Create a schedule-based Read in Daily Life item that works with a screen reader.",
+    "expects": [
+      "provides a linear plain-text representation",
+      "preserves every row or label needed to answer",
+      "does not rely on color or position alone",
+      "withholds the answer until an attempt"
+    ]
+  }
+]

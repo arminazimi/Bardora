@@ -1,0 +1,52 @@
+[
+  {
+    "id": "listen-and-choose-a-response.practice-setup",
+    "request": "Give me an original Listen and Choose a Response item in text-only mode.",
+    "expects": [
+      "identifies Listen and Choose a Response",
+      "labels the task as transcript-based language or pragmatic practice",
+      "uses an original utterance with plausible response options",
+      "teaches the function cue and withholds the answer"
+    ]
+  },
+  {
+    "id": "listen-and-choose-a-response.wrong-function",
+    "request": "Utterance: 'Could you send me the revised schedule?' Options: A) It was revised yesterday. B) Sure, I'll email it now. C) The meeting is upstairs. I chose A. Coach me.",
+    "expects": [
+      "identifies the utterance as a request",
+      "selects B as the natural response",
+      "explains A as a keyword match that does not fulfill the request",
+      "offers one request-response retry"
+    ]
+  },
+  {
+    "id": "listen-and-choose-a-response.negative-cue",
+    "request": "I often miss negatives in short exchanges. Give me one targeted retry.",
+    "expects": [
+      "creates an original brief exchange with a meaningful negative cue",
+      "uses distractors that diagnose polarity or function errors",
+      "gives one compact listening cue",
+      "withholds the answer until an attempt"
+    ]
+  },
+  {
+    "id": "listen-and-choose-a-response.transcript-limit",
+    "request": "I only have the transcript and chose the correct response. Does that prove my listening is strong?",
+    "expects": [
+      "says transcript success does not prove audio comprehension",
+      "credits observable language or pragmatic understanding",
+      "names missing audio evidence",
+      "offers an audio or transcript fallback"
+    ]
+  },
+  {
+    "id": "listen-and-choose-a-response.accessibility",
+    "request": "Create an accessible audio practice item for Listen and Choose a Response.",
+    "expects": [
+      "keeps response options screen-reader compatible",
+      "provides an alternate transcript path when audio is inaccessible",
+      "states the modality used in feedback",
+      "does not encode the answer through visual position or sound effects"
+    ]
+  }
+]

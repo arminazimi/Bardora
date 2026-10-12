@@ -124,6 +124,48 @@ class RepositoryContractTests(unittest.TestCase):
         for case in cases:
             self.assertGreaterEqual(len(case["expects"]), 4)
 
+    def test_new_receptive_task_module_contracts(self):
+        skill = self.read("SKILL.md")
+        modules = {
+            "references/tasks/reading.read-in-daily-life.md": "tests/cases/read-in-daily-life.json",
+            "references/tasks/reading.read-an-academic-passage.md": "tests/cases/read-an-academic-passage.json",
+            "references/tasks/listening.listen-and-choose-a-response.md": "tests/cases/listen-and-choose-a-response.json",
+        }
+        headings = (
+            "## Evidence required",
+            "## Success dimensions",
+            "## High-impact failure modes",
+            "## Original-practice contract",
+            "## Feedback boundary",
+            "## Completion criterion",
+        )
+        for module_path, case_path in modules.items():
+            with self.subTest(module=module_path):
+                module = self.read(module_path)
+                cases = json.loads(self.read(case_path))
+                self.assertIn(f"]({module_path})", skill)
+                self.assertEqual(5, len(cases))
+                self.assertEqual(5, len({case["id"] for case in cases}))
+                for heading in headings:
+                    self.assertIn(heading, module)
+                self.assertIn("do not copy or closely paraphrase ETS", module)
+                for case in cases:
+                    self.assertTrue(case["request"].strip())
+                    self.assertGreaterEqual(len(case["expects"]), 4)
+
+    def test_task_specific_behavior_requests_are_unique(self):
+        case_files = sorted((ROOT / "tests" / "cases").glob("*.json"))
+        seen = {}
+        duplicates = []
+        for case_file in case_files:
+            for case in json.loads(case_file.read_text(encoding="utf-8")):
+                request = case["request"].strip()
+                if request in seen:
+                    duplicates.append((request, seen[request], case_file.name))
+                else:
+                    seen[request] = case_file.name
+        self.assertEqual([], duplicates)
+
     def test_public_docs_disclose_independence_and_scoring_limit(self):
         combined = "\n".join(
             self.read(path)
@@ -157,10 +199,16 @@ class RepositoryContractTests(unittest.TestCase):
             "evaluations/build-a-sentence-2026-10-12.md",
             "references/feedback-contract.md",
             "references/tasks/reading.complete-the-words.md",
+            "references/tasks/reading.read-in-daily-life.md",
+            "references/tasks/reading.read-an-academic-passage.md",
+            "references/tasks/listening.listen-and-choose-a-response.md",
             "references/tasks/writing.build-a-sentence.md",
             "tests/cases/core.json",
             "tests/cases/build-a-sentence.json",
             "tests/cases/complete-the-words.json",
+            "tests/cases/read-in-daily-life.json",
+            "tests/cases/read-an-academic-passage.json",
+            "tests/cases/listen-and-choose-a-response.json",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())
         self.assertEqual([], missing)

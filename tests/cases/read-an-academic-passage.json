@@ -1,0 +1,52 @@
+[
+  {
+    "id": "read-an-academic-passage.practice-setup",
+    "request": "Give me an original medium-difficulty Read an Academic Passage diagnostic.",
+    "expects": [
+      "identifies Read an Academic Passage",
+      "uses an original structured academic passage",
+      "asks about key idea detail organization and inference",
+      "states the bounded diagnostic scope and withholds answers"
+    ]
+  },
+  {
+    "id": "read-an-academic-passage.key-idea",
+    "request": "Passage: 'Urban trees cool streets through shade and evaporation. A city study found the strongest cooling on blocks with connected tree canopies. Isolated trees still helped, but their effect was smaller.' I chose 'Isolated trees provide no cooling' as the main idea. Coach me.",
+    "expects": [
+      "rejects the choice using passage evidence",
+      "identifies connected canopy and relative cooling as the key idea",
+      "distinguishes the isolated-tree detail from the main point",
+      "offers a key-idea retry"
+    ]
+  },
+  {
+    "id": "read-an-academic-passage.organization",
+    "request": "A passage first describes a decline in bee visits, then tests whether flower color or pesticide exposure explains it, and finally reports support only for pesticide exposure. What is the organization?",
+    "expects": [
+      "identifies observation then competing explanations then result",
+      "recognizes the problem-investigation-conclusion structure",
+      "does not reduce the organization to simple chronology",
+      "explains the relationship between the tested explanations"
+    ]
+  },
+  {
+    "id": "read-an-academic-passage.inference-boundary",
+    "request": "Passage evidence says seedlings grew faster under blue light than under red light during a two-week laboratory study. I concluded blue light always produces healthier adult plants outdoors. Evaluate my inference.",
+    "expects": [
+      "rejects the overgeneralization",
+      "cites duration setting and measured outcome as limits",
+      "states a narrower supported inference",
+      "offers an inference-strength retry"
+    ]
+  },
+  {
+    "id": "read-an-academic-passage.missing-source",
+    "request": "I missed an academic passage question. Explain why my answer was wrong, but I do not have the passage or options.",
+    "expects": [
+      "requests the passage question options and learner answer",
+      "does not invent passage evidence",
+      "limits any general strategy advice",
+      "does not infer an official Reading score"
+    ]
+  }
+]
