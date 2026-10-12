@@ -7,22 +7,22 @@
   {
     "id": "reading.read-in-daily-life",
     "request": "Practice Read in Daily Life with me.",
-    "expects": ["identifies the task", "uses an original everyday text", "explains evidence for the answer", "offers a targeted retry"]
+    "expects": ["identifies the task", "uses an original everyday text", "asks the learner to support an answer with text evidence", "offers a targeted retry"]
   },
   {
     "id": "reading.read-an-academic-passage",
     "request": "I want an academic reading diagnostic.",
-    "expects": ["routes to Read an Academic Passage", "uses original material", "diagnoses a high-impact gap", "states diagnostic scope"]
+    "expects": ["routes to Read an Academic Passage", "uses original material", "collects an attempt before diagnosing a gap", "states diagnostic scope"]
   },
   {
     "id": "listening.listen-and-choose-a-response",
     "request": "Train me on Listen and Choose a Response.",
-    "expects": ["identifies the task", "uses an original prompt", "checks the learner attempt", "explains the conversational cue"]
+    "expects": ["identifies the task", "uses an original prompt", "collects the learner attempt", "teaches a conversational cue without revealing answers"]
   },
   {
     "id": "listening.listen-to-a-conversation",
     "request": "Create a short conversation listening exercise.",
-    "expects": ["routes to Listen to a Conversation", "uses an original script or audio", "checks source-based accuracy", "offers a retry"]
+    "expects": ["routes to Listen to a Conversation", "uses an original script or audio", "asks source-grounded comprehension questions", "offers a retry"]
   },
   {
     "id": "listening.listen-to-an-announcement",
@@ -37,21 +37,21 @@
   {
     "id": "writing.build-a-sentence",
     "request": "Practice Build a Sentence with me.",
-    "expects": ["identifies the task", "elicits an attempt", "explains the grammar relationship", "offers a focused retry"]
+    "expects": ["identifies the task", "elicits an attempt", "teaches one grammar relationship without revealing answers", "offers a focused retry"]
   },
   {
     "id": "writing.write-an-email",
-    "request": "Review my Write an Email answer and estimate it: [learner text].",
+    "request": "Review my Write an Email answer and estimate it. I no longer have the original prompt. My response was: 'Subject: Room problem. Hello, Our debate club booked Room 204 for Tuesday at 4, but another group was using it when we arrived. We need meet every Tuesday because competition soon. Please give us a room. Thanks, Sam.'",
     "expects": ["requests or states missing prompt context", "cites response evidence", "limits priorities to three", "labels any estimate non-official"]
   },
   {
     "id": "writing.academic-discussion",
-    "request": "Coach my Academic Discussion response: [prompt and learner text].",
+    "request": "Coach my Academic Discussion response. Professor: 'Should universities require every student to complete community service?' Lina says service builds civic skills; Omar says it takes time away from study. My response: 'I agree with Lina that service should be required because students can know society. For example, I volunteered at food bank and learned how many families need help. This experience also improved my communication, so universities should make all students do service.'",
     "expects": ["identifies the task", "evaluates contribution and support", "cites response evidence", "asks for a bounded revision"]
   },
   {
     "id": "speaking.listen-and-repeat",
-    "request": "Here is only a transcript of my Listen and Repeat answer. Score my pronunciation.",
+    "request": "For Listen and Repeat, the original sentence was 'The library closes at nine during exam week.' I only have this transcript of my answer: 'The library close at nine during exam week.' Score my pronunciation.",
     "expects": ["identifies the task", "declines to infer pronunciation from text", "evaluates only available evidence", "offers an audio or text fallback"]
   },
   {
@@ -70,4 +70,3 @@
     "expects": ["does not infer a total score", "explains the evidence limit", "may offer a labeled practice estimate", "suggests a broader diagnostic"]
   }
 ]
-

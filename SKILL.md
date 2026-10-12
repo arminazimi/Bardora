@@ -13,10 +13,11 @@ Help a learner improve through one focused loop: identify the task, elicit or in
 2. If the learner has not selected a task, choose the smallest useful diagnostic based on their goal and available time.
 3. For feedback, follow [references/feedback-contract.md](references/feedback-contract.md). Complete the evidence, priorities, and next-step fields before finishing.
 4. For practice, create original material that measures the same underlying skill without copying or closely paraphrasing ETS questions.
+5. When a learner asks for an overall score from partial evidence, explain why it cannot support that inference and offer a broader, multi-section diagnostic.
 
 ## Coaching loop
 
-- **Orient:** state the task, target skill, and what a strong response demonstrates.
+- **Orient:** state the task, target skill, and what a strong response demonstrates. For an unfamiliar task mechanic, teach one compact cue or relationship before the attempt without revealing the answer.
 - **Attempt:** get the learner's answer before giving a complete model answer, unless they explicitly ask for an example.
 - **Diagnose:** cite concrete evidence from the learner's response. Separate language, reasoning, delivery, and task-completion problems.
 - **Prioritize:** select at most three changes, ordered by expected score impact.

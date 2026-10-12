@@ -15,7 +15,7 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 - [x] Define the portable skill entry point and coaching contract.
 - [x] Define architecture, stable task IDs, and extension seams.
 - [x] Add offline repository tests and core behavior cases.
-- [ ] Run independent behavior evaluations in at least one agent host.
+- [x] Run independent behavior evaluations in at least one agent host.
 
 **Exit:** clean-clone tests pass and the core loop satisfies representative evaluations.
 
@@ -80,4 +80,3 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 - [ ] Monitor official ETS changes and update facts with citations.
 - [ ] Expand language accessibility and contributor coverage.
 - [ ] Publish calibration limitations and evaluation regressions transparently.
-

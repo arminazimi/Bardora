@@ -73,6 +73,14 @@ class RepositoryContractTests(unittest.TestCase):
             self.assertTrue(case["request"].strip())
             self.assertGreaterEqual(len(case["expects"]), 3)
 
+    def test_latest_behavior_evaluation_covers_every_case(self):
+        cases = json.loads(self.read("tests/cases/core.json"))
+        report = self.read("evaluations/core-behavior-2026-10-12.md")
+        self.assertIn("Pass: 14 of 14 cases and 55 of 55 observable criteria", report)
+        self.assertIn("## Limitations", report)
+        for case in cases:
+            self.assertIn(f"`{case['id']}`", report)
+
     def test_public_docs_disclose_independence_and_scoring_limit(self):
         combined = "\n".join(
             self.read(path)
@@ -102,6 +110,7 @@ class RepositoryContractTests(unittest.TestCase):
             "docs/architecture.md",
             "docs/toefl-2026-task-matrix.md",
             "docs/ROADMAP.md",
+            "evaluations/core-behavior-2026-10-12.md",
             "references/feedback-contract.md",
             "tests/cases/core.json",
         }

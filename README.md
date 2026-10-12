@@ -32,6 +32,7 @@ docs/toefl-2026-task-matrix.md        ETS-sourced 2026 format matrix
 docs/research/                         Dated official-source audits
 docs/ROADMAP.md                       Delivery phases and completion criteria
 references/feedback-contract.md       Shared coaching output contract
+evaluations/                           Dated behavior-evaluation reports
 tests/cases/core.json                 Behavior-oriented evaluation cases
 tests/test_repository_contract.py     Offline repository checks
 ```
@@ -62,6 +63,7 @@ These tests validate packaging, source traceability, all 12 task types, evaluati
 - [Architecture](docs/architecture.md)
 - [TOEFL iBT 2026 task matrix](docs/toefl-2026-task-matrix.md)
 - [ETS official-source audit — October 12, 2026](docs/research/ets-source-audit-2026-10-12.md)
+- [Core behavior evaluation — October 12, 2026](evaluations/core-behavior-2026-10-12.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Contributing](CONTRIBUTING.md)
 
