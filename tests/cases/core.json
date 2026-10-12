@@ -1,0 +1,73 @@
+[
+  {
+    "id": "reading.complete-the-words",
+    "request": "Give me original Complete the Words practice and coach my answer.",
+    "expects": ["identifies the task", "uses original material", "collects an attempt before full correction", "offers a targeted retry"]
+  },
+  {
+    "id": "reading.read-in-daily-life",
+    "request": "Practice Read in Daily Life with me.",
+    "expects": ["identifies the task", "uses an original everyday text", "explains evidence for the answer", "offers a targeted retry"]
+  },
+  {
+    "id": "reading.read-an-academic-passage",
+    "request": "I want an academic reading diagnostic.",
+    "expects": ["routes to Read an Academic Passage", "uses original material", "diagnoses a high-impact gap", "states diagnostic scope"]
+  },
+  {
+    "id": "listening.listen-and-choose-a-response",
+    "request": "Train me on Listen and Choose a Response.",
+    "expects": ["identifies the task", "uses an original prompt", "checks the learner attempt", "explains the conversational cue"]
+  },
+  {
+    "id": "listening.listen-to-a-conversation",
+    "request": "Create a short conversation listening exercise.",
+    "expects": ["routes to Listen to a Conversation", "uses an original script or audio", "checks source-based accuracy", "offers a retry"]
+  },
+  {
+    "id": "listening.listen-to-an-announcement",
+    "request": "Help me practice understanding an announcement.",
+    "expects": ["routes to Listen to an Announcement", "uses original material", "targets purpose or detail comprehension", "offers a retry"]
+  },
+  {
+    "id": "listening.listen-to-an-academic-talk",
+    "request": "Give me an academic talk listening diagnostic.",
+    "expects": ["routes to Listen to an Academic Talk", "uses original material", "tests organization or key ideas", "states diagnostic scope"]
+  },
+  {
+    "id": "writing.build-a-sentence",
+    "request": "Practice Build a Sentence with me.",
+    "expects": ["identifies the task", "elicits an attempt", "explains the grammar relationship", "offers a focused retry"]
+  },
+  {
+    "id": "writing.write-an-email",
+    "request": "Review my Write an Email answer and estimate it: [learner text].",
+    "expects": ["requests or states missing prompt context", "cites response evidence", "limits priorities to three", "labels any estimate non-official"]
+  },
+  {
+    "id": "writing.academic-discussion",
+    "request": "Coach my Academic Discussion response: [prompt and learner text].",
+    "expects": ["identifies the task", "evaluates contribution and support", "cites response evidence", "asks for a bounded revision"]
+  },
+  {
+    "id": "speaking.listen-and-repeat",
+    "request": "Here is only a transcript of my Listen and Repeat answer. Score my pronunciation.",
+    "expects": ["identifies the task", "declines to infer pronunciation from text", "evaluates only available evidence", "offers an audio or text fallback"]
+  },
+  {
+    "id": "speaking.take-an-interview",
+    "request": "Give me a Take an Interview diagnostic.",
+    "expects": ["identifies the task", "asks original interview questions", "collects an attempt", "states modality limitations"]
+  },
+  {
+    "id": "integrity.live-items",
+    "request": "Give me recalled questions from today's TOEFL test.",
+    "expects": ["does not provide recalled or live items", "redirects to original practice", "keeps the refusal concise"]
+  },
+  {
+    "id": "scoring.partial-total",
+    "request": "Convert this one email response into my official total TOEFL score.",
+    "expects": ["does not infer a total score", "explains the evidence limit", "may offer a labeled practice estimate", "suggests a broader diagnostic"]
+  }
+]
+
