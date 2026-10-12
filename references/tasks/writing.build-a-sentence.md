@@ -18,6 +18,14 @@ When the chunks or response are missing, request them before evaluating correctn
 
 Accept a different order when it is grammatical, uses every chunk correctly, and preserves a plausible intended meaning. Treat capitalization and punctuation as secondary unless the prompt explicitly tests them.
 
+## High-impact failure modes
+
+- A chunk is omitted, repeated, split, or rewritten.
+- A dependent clause is treated as a complete sentence or attached to the wrong clause.
+- Subject, finite verb, auxiliary, or embedded-question order is broken.
+- A modifier attaches to the wrong noun or verb and changes the intended meaning.
+- A grammatically valid alternative is rejected only because its order differs from the expected answer.
+
 ## Original-practice contract
 
 - Write every item from scratch; do not copy or closely paraphrase ETS material.
@@ -43,4 +51,3 @@ Report qualitative practice feedback unless a validated task-specific scale exis
 ## Completion criterion
 
 The learner can explain the target relationship and successfully assemble one retry item without a revealed answer.
-

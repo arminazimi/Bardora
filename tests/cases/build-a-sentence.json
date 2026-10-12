@@ -28,6 +28,25 @@
       "explains the time relationship",
       "does not invent an error based only on order"
     ]
+  },
+  {
+    "id": "build-a-sentence.missing-evidence",
+    "request": "Is my Build a Sentence answer correct?",
+    "expects": [
+      "requests the complete chunk set",
+      "requests the learner's assembled sentence",
+      "does not guess correctness",
+      "does not invent a numeric score"
+    ]
+  },
+  {
+    "id": "build-a-sentence.retry",
+    "request": "I put the although-clause in the wrong place. Give me one retry for the same pattern.",
+    "expects": [
+      "targets the contrast-clause pattern",
+      "uses an original 3-to-5-chunk item",
+      "gives one compact cue",
+      "withholds the answer pending an attempt"
+    ]
   }
 ]
-

@@ -18,6 +18,7 @@ Help a learner improve through one focused loop: identify the task, elicit or in
 ## Task modules
 
 Before coaching `writing.build-a-sentence`, read [references/tasks/writing.build-a-sentence.md](references/tasks/writing.build-a-sentence.md).
+Before coaching `reading.complete-the-words`, read [references/tasks/reading.complete-the-words.md](references/tasks/reading.complete-the-words.md).
 
 ## Coaching loop
 

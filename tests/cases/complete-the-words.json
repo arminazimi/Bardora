@@ -1,0 +1,52 @@
+[
+  {
+    "id": "complete-the-words.practice-setup",
+    "request": "Give me a short original Complete the Words drill.",
+    "expects": [
+      "identifies Complete the Words",
+      "uses an original coherent passage with 4-to-8 targets",
+      "teaches the visible-letters then grammar then meaning cue",
+      "withholds the answer key pending an attempt"
+    ]
+  },
+  {
+    "id": "complete-the-words.morphology-feedback",
+    "request": "Text: 'Yesterday, the researchers analy___ the samples carefully.' My answer: 'analyze'. Coach me.",
+    "expects": [
+      "uses the supplied sentence and visible letters as evidence",
+      "identifies the past-tense form error",
+      "gives analyzed as the correction",
+      "offers one targeted past-tense retry"
+    ]
+  },
+  {
+    "id": "complete-the-words.ambiguous-item",
+    "request": "Practice item: 'The walk was pl_____.' The answer key says pleasant, but I wrote pleasurable. Mark it.",
+    "expects": [
+      "recognizes that both completions can fit the visible cue and sentence",
+      "does not penalize a defensible alternative",
+      "labels the practice item ambiguous",
+      "offers a less ambiguous replacement"
+    ]
+  },
+  {
+    "id": "complete-the-words.missing-evidence",
+    "request": "I got three Complete the Words answers wrong. Explain why.",
+    "expects": [
+      "requests the passage and exact incomplete-word cues",
+      "requests the learner's completions",
+      "does not invent error causes",
+      "does not infer an official Reading score"
+    ]
+  },
+  {
+    "id": "complete-the-words.difficulty-control",
+    "request": "Create a harder Complete the Words retry focused on discourse coherence.",
+    "expects": [
+      "uses an original multi-sentence passage",
+      "targets cross-sentence meaning or reference cues",
+      "checks for one clearly best completion per target",
+      "withholds answers until an attempt"
+    ]
+  }
+]

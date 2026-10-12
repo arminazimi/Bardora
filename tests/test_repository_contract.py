@@ -87,11 +87,36 @@ class RepositoryContractTests(unittest.TestCase):
         module = self.read(module_path)
         cases = json.loads(self.read("tests/cases/build-a-sentence.json"))
         self.assertIn(f"]({module_path})", skill)
-        self.assertEqual(3, len(cases))
-        self.assertEqual(3, len({case["id"] for case in cases}))
+        self.assertEqual(5, len(cases))
+        self.assertEqual(5, len({case["id"] for case in cases}))
         for heading in (
             "## Evidence required",
             "## Success dimensions",
+            "## High-impact failure modes",
+            "## Original-practice contract",
+            "## Completion criterion",
+        ):
+            self.assertIn(heading, module)
+        for case in cases:
+            self.assertGreaterEqual(len(case["expects"]), 4)
+
+        report = self.read("evaluations/build-a-sentence-2026-10-12.md")
+        self.assertIn("Pass: 5 of 5 cases and 20 of 20 observable criteria", report)
+        for case in cases:
+            self.assertIn(f"`{case['id']}`", report)
+
+    def test_complete_the_words_module_contract(self):
+        skill = self.read("SKILL.md")
+        module_path = "references/tasks/reading.complete-the-words.md"
+        module = self.read(module_path)
+        cases = json.loads(self.read("tests/cases/complete-the-words.json"))
+        self.assertIn(f"]({module_path})", skill)
+        self.assertEqual(5, len(cases))
+        self.assertEqual(5, len({case["id"] for case in cases}))
+        for heading in (
+            "## Evidence required",
+            "## Success dimensions",
+            "## High-impact failure modes",
             "## Original-practice contract",
             "## Completion criterion",
         ):
@@ -129,10 +154,13 @@ class RepositoryContractTests(unittest.TestCase):
             "docs/toefl-2026-task-matrix.md",
             "docs/ROADMAP.md",
             "evaluations/core-behavior-2026-10-12.md",
+            "evaluations/build-a-sentence-2026-10-12.md",
             "references/feedback-contract.md",
+            "references/tasks/reading.complete-the-words.md",
             "references/tasks/writing.build-a-sentence.md",
             "tests/cases/core.json",
             "tests/cases/build-a-sentence.json",
+            "tests/cases/complete-the-words.json",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())
         self.assertEqual([], missing)

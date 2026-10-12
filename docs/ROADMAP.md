@@ -21,7 +21,7 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 
 ## 2 — Writing v0.2.0
 
-- [ ] Implement Build a Sentence coaching and evaluations.
+- [x] Implement Build a Sentence coaching and evaluations.
 - [ ] Implement Write an Email coaching and evaluations.
 - [ ] Implement Write for an Academic Discussion coaching and evaluations.
 - [ ] Review feedback against public ETS guidance with human raters or qualified educators.
@@ -39,7 +39,7 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 
 ## 4 — Reading and Listening v0.4.0
 
-- [ ] Implement the three Reading task modules.
+- [ ] Implement the three Reading task modules. Complete the Words is implemented; two modules remain.
 - [ ] Implement the four Listening task modules.
 - [ ] Build an originality review for generated passages, scripts, and questions.
 - [ ] Test accessibility alternatives for audio-dependent practice.
