@@ -23,7 +23,7 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 
 - [x] Implement Build a Sentence coaching and evaluations.
 - [x] Implement Write an Email coaching and evaluations.
-- [ ] Implement Write for an Academic Discussion coaching and evaluations.
+- [x] Implement Write for an Academic Discussion coaching and evaluations.
 - [ ] Review feedback against public ETS guidance with human raters or qualified educators.
 
 **Exit:** all Writing task modules pass behavior and originality checks.

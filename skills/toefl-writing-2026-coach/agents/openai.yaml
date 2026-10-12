@@ -1,0 +1,6 @@
+interface:
+  display_name: "TOEFL Writing 2026 Coach"
+  short_description: "End-to-end coach for TOEFL Writing 2026"
+  default_prompt: "Use $toefl-writing-2026-coach as my end-to-end TOEFL Writing coach to help me plan, write, score, revise, practice, and track progress."
+policy:
+  allow_implicit_invocation: true

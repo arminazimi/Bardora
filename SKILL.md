@@ -17,8 +17,7 @@ Help a learner improve through one focused loop: identify the task, elicit or in
 
 ## Task modules
 
-Before coaching `writing.build-a-sentence`, read [references/tasks/writing.build-a-sentence.md](references/tasks/writing.build-a-sentence.md).
-Before coaching `writing.write-an-email`, read [references/tasks/writing.write-an-email.md](references/tasks/writing.write-an-email.md).
+For every Writing request—Build a Sentence, Write an Email, or Write for an Academic Discussion—read [the complete TOEFL Writing 2026 Coach](skills/toefl-writing-2026-coach/SKILL.md) and follow its routing. It is the sole authoritative Writing implementation; the earlier task modules remain only as evaluation history.
 Before coaching `reading.complete-the-words`, read [references/tasks/reading.complete-the-words.md](references/tasks/reading.complete-the-words.md).
 Before coaching `reading.read-in-daily-life`, read [references/tasks/reading.read-in-daily-life.md](references/tasks/reading.read-in-daily-life.md).
 Before coaching `reading.read-an-academic-passage`, read [references/tasks/reading.read-an-academic-passage.md](references/tasks/reading.read-an-academic-passage.md).

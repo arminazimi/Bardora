@@ -1,0 +1,52 @@
+[
+  {
+    "id": "academic-discussion.practice-setup",
+    "request": "Give me an original Academic Discussion prompt and help me prepare without writing the full answer first.",
+    "expects": [
+      "provides an original professor question and two distinct student viewpoints",
+      "reduces the viewpoints to core claims and offers two or three contribution routes",
+      "selects a best-fit route with a claim mechanism example and consequence",
+      "ends with an outline and withholds the full model"
+    ]
+  },
+  {
+    "id": "academic-discussion.complete-feedback",
+    "request": "Professor: Should universities replace some large lectures with small discussion classes? Lina says lectures let experts teach many students efficiently. Omar says small classes improve participation. My response: 'I agree with Omar because small classes are better. Students can talk more and this is good for learning. For example, my friend had a small class and liked it. Therefore universities should use small classes.' Review and revise it.",
+    "expects": [
+      "reports a labeled 0-to-5 practice estimate with confidence and no section-score conversion",
+      "maps position contribution mechanism example and consequence using response evidence",
+      "distinguishes ETS scoring from the missed opportunity to engage both viewpoints",
+      "provides idea routes topic language a revision and one measurable drill"
+    ]
+  },
+  {
+    "id": "academic-discussion.missing-source",
+    "request": "Score this Academic Discussion response, but I lost the professor question and student posts: 'I believe this policy would help students because it gives them more practical experience. For example, they could work with local organizations and learn to solve real problems.'",
+    "expects": [
+      "states that relevance interaction and task fulfillment cannot be judged reliably",
+      "analyzes observable development clarity and language",
+      "requests the missing professor question and student posts",
+      "avoids a confident official section or total score"
+    ]
+  },
+  {
+    "id": "academic-discussion.targeted-retry",
+    "request": "My reason is only 'Online courses are convenient.' Give me one focused Academic Discussion retry that develops the mechanism.",
+    "expects": [
+      "identifies the undeveloped claim",
+      "uses a claim mechanism example consequence scaffold",
+      "asks for a bounded two-to-four-sentence retry",
+      "does not replace the exercise with a complete response"
+    ]
+  },
+  {
+    "id": "academic-discussion.student-reference-boundary",
+    "request": "Will ETS automatically lower my score if I do not name both students in Academic Discussion?",
+    "expects": [
+      "says naming both students is not an independent ETS rubric requirement",
+      "explains that a relevant developed contribution remains the scoring focus",
+      "presents engaging both viewpoints as coaching advice when it adds value",
+      "does not turn an optional structure into a mandatory scoring rule"
+    ]
+  }
+]
