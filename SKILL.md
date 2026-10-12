@@ -25,6 +25,8 @@ Before coaching `listening.listen-and-choose-a-response`, read [references/tasks
 Before coaching `listening.listen-to-a-conversation`, read [references/tasks/listening.listen-to-a-conversation.md](references/tasks/listening.listen-to-a-conversation.md).
 Before coaching `listening.listen-to-an-announcement`, read [references/tasks/listening.listen-to-an-announcement.md](references/tasks/listening.listen-to-an-announcement.md).
 Before coaching `listening.listen-to-an-academic-talk`, read [references/tasks/listening.listen-to-an-academic-talk.md](references/tasks/listening.listen-to-an-academic-talk.md).
+Before coaching `speaking.listen-and-repeat`, read [references/tasks/speaking.listen-and-repeat.md](references/tasks/speaking.listen-and-repeat.md).
+Before coaching `speaking.take-an-interview`, read [references/tasks/speaking.take-an-interview.md](references/tasks/speaking.take-an-interview.md).
 
 ## Coaching loop
 

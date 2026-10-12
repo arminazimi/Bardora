@@ -115,7 +115,7 @@ The coach confirms time and modality constraints, samples relevant task types, r
 
 - What independent public brand should replace the working repository identifier?
 - Which qualitative or numeric practice scale should be used per task after sufficient validation?
-- Which audio capabilities are required for the first Speaking release?
+- Which audio-capable agent environments should receive maintained Speaking adapters for v1.0?
 - What opt-in, privacy-preserving learner-state format should support progress tracking?
 - Which agent environments will receive maintained installation adapters for v1.0?
 

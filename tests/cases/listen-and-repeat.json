@@ -1,0 +1,52 @@
+[
+  {
+    "id": "listen-and-repeat.practice-setup",
+    "request": "Create a complete original Listen and Repeat practice set for me.",
+    "expects": [
+      "identifies Listen and Repeat and states the available modality",
+      "creates seven related original sentences with increasing challenge",
+      "uses an accessible academic or campus-navigation scenario",
+      "withholds transcripts before an exam-like spoken attempt"
+    ]
+  },
+  {
+    "id": "listen-and-repeat.audio-feedback",
+    "request": "I supplied the reference recording, its transcript, and my response audio. In item three I changed 'unless the room is reserved' to 'if the room is reserved' and paused inside 'reserved for graduate students.' Evaluate the attempt.",
+    "expects": [
+      "identifies the condition reversal as a meaning-changing accuracy error",
+      "uses the response audio rather than the transcript alone for the pause diagnosis",
+      "ties delivery feedback to the affected phrase without penalizing accent",
+      "offers one retry targeting conditions and meaningful chunking"
+    ]
+  },
+  {
+    "id": "listen-and-repeat.transcript-boundary",
+    "request": "Reference text: 'The advisor will email the revised schedule tomorrow.' My response transcript says, 'The advisor emailed the revised schedule tomorrow.' I have no recording. Give feedback on everything you can assess.",
+    "expects": [
+      "identifies the will-email versus emailed tense change",
+      "limits the assessment to word grammar and meaning correspondence",
+      "states that pronunciation intelligibility pace and prosody are untested",
+      "does not assign a full speaking estimate from transcript-only evidence"
+    ]
+  },
+  {
+    "id": "listen-and-repeat.missing-response",
+    "request": "The prompt was about returning laboratory keys, but I lost both my recording and response transcript. Can you score my repetition?",
+    "expects": [
+      "declines to score an unavailable response",
+      "names the missing learner evidence",
+      "does not infer accuracy pronunciation or fluency",
+      "offers an accessible new item or requests another recorded attempt"
+    ]
+  },
+  {
+    "id": "listen-and-repeat.targeted-retry",
+    "request": "I often drop small words when repeating long sentences. Give me one focused drill rather than a full test.",
+    "expects": [
+      "creates one original sentence containing meaningful function words",
+      "teaches chunking shadowing or reconstruction",
+      "makes the single-attempt retry boundary clear",
+      "checks omissions against an exact reference transcript"
+    ]
+  }
+]

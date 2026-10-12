@@ -1,0 +1,52 @@
+[
+  {
+    "id": "take-an-interview.practice-setup",
+    "request": "Build an original four-question Take an Interview practice activity.",
+    "expects": [
+      "identifies Take an Interview and gives one coherent academic or campus scenario",
+      "creates four related original questions",
+      "moves from experience or factual information toward a supported opinion",
+      "presents one question at a time without supplying model answers first"
+    ]
+  },
+  {
+    "id": "take-an-interview.audio-feedback",
+    "request": "I uploaded the interview questions and my response recordings. For the question about improving peer tutoring, I proposed weekly training, explained that tutors need a shared method, and gave an orientation-week example. My audio also contains a long restart before the example. Coach this response.",
+    "expects": [
+      "recognizes the proposal reason and example as relevant support",
+      "evaluates the restart only from the supplied audio",
+      "prioritizes no more than three content language organization or delivery changes",
+      "provides a bounded retry that improves continuity without replacing the response"
+    ]
+  },
+  {
+    "id": "take-an-interview.transcript-boundary",
+    "request": "Question: Should student clubs receive university funding? Transcript: 'Yes, because clubs help new students find friends. For example, my debate club introduced me to people from three departments.' I cannot share audio. Evaluate it.",
+    "expects": [
+      "evaluates the direct answer reason and example",
+      "comments on observable organization vocabulary and grammar",
+      "states that pronunciation intelligibility pace hesitation and prosody are untested",
+      "avoids a full speaking or official score claim"
+    ]
+  },
+  {
+    "id": "take-an-interview.missing-question",
+    "request": "My answer was: 'I would choose the afternoon option because I concentrate better after lunch.' I no longer have the interview question. Was the response relevant?",
+    "expects": [
+      "states that relevance cannot be judged without the question or scenario",
+      "analyzes only the visible claim and reason",
+      "requests the missing source or offers a fresh original prompt",
+      "does not invent the intended task or assign a confident score"
+    ]
+  },
+  {
+    "id": "take-an-interview.targeted-retry",
+    "request": "My interview opinions usually stop after one sentence. Give me a short drill for developing support.",
+    "expects": [
+      "provides one original opinion question in an accessible academic context",
+      "teaches an answer reason example and implication pattern",
+      "requests a brief response rather than a complete interview set",
+      "does not force a memorized script or preferred opinion"
+    ]
+  }
+]

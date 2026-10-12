@@ -10,9 +10,9 @@ An open-source Agent Skill for preparation aligned with the TOEFL iBT® test for
 
 ## Project status
 
-**Foundation v0.1.0 — in development.** The repository defines the product, its portable skill interface, the official-format task matrix, architecture, evaluation cases, and roadmap. Coaching content and scoring calibration will be added incrementally and must pass the documented evaluations before a stable release.
+**Task coaching implemented; release work continues.** The repository defines the product, portable skill interface, official-format task matrix, architecture, and task-specific coaching for Reading, Listening, Writing, and Speaking. Human calibration, learning intelligence, cross-platform validation, independent branding, and release gates remain before a stable release.
 
-## What the skill will do
+## What the skill does
 
 - Route learners to the correct Reading, Listening, Writing, or Speaking task type.
 - Teach the format and strategy with original practice material.

@@ -38,7 +38,7 @@ Owns request routing, the coaching loop, global integrity boundaries, and comple
 
 ### Task registry
 
-`docs/toefl-2026-task-matrix.md` is the single source of truth for official task names and format facts. Every fact that may change carries an official source. Future task modules refer to stable task IDs from this registry.
+`docs/toefl-2026-task-matrix.md` is the single source of truth for official task names and format facts. Every fact that may change carries an official source. Task modules refer to stable task IDs from this registry.
 
 ### Coaching contracts
 
@@ -101,7 +101,7 @@ Add task-specific coaching as `references/tasks/<task-id>.md` only when it conta
 - an original-practice generation contract;
 - task-specific evaluation cases.
 
-The core skill links a module when implemented. Unimplemented modules still use the shared coaching contract and matrix without pretending to offer calibrated scoring.
+The core skill links every implemented module. A newly introduced task type must remain on the shared coaching contract and matrix until its task-specific evidence boundaries and evaluations are ready.
 
 ## Trust boundaries
 
@@ -128,4 +128,3 @@ Every release that changes format facts must record the source and its effective
 | Facts separated from behavior | ETS format can change without rewriting the coaching loop |
 | Qualitative feedback before score prediction | Avoids false precision until calibration evidence exists |
 | No required persistence in MVP | Reduces privacy risk and hosting requirements |
-

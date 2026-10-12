@@ -30,10 +30,10 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 
 ## 3 — Speaking v0.3.0
 
-- [ ] Implement Listen and Repeat coaching with audio-capability fallbacks.
-- [ ] Implement Take an Interview coaching.
-- [ ] Define pronunciation, fluency, and content evidence boundaries.
-- [ ] Validate transcript-only limitation disclosures.
+- [x] Implement Listen and Repeat coaching with audio-capability fallbacks.
+- [x] Implement Take an Interview coaching.
+- [x] Define pronunciation, fluency, and content evidence boundaries.
+- [x] Validate transcript-only limitation disclosures.
 
 **Exit:** both Speaking modules behave safely with audio, transcript, and missing-modality inputs.
 

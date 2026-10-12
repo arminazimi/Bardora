@@ -268,6 +268,50 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertIn("Pass with declared limits", report)
         self.assertIn("## Limitations", report)
 
+    def test_speaking_module_contracts(self):
+        skill = self.read("SKILL.md")
+        modules = {
+            "speaking.listen-and-repeat": "listen-and-repeat",
+            "speaking.take-an-interview": "take-an-interview",
+        }
+        headings = (
+            "## Evidence required",
+            "## Success dimensions",
+            "## High-impact failure modes",
+            "## Original-practice contract",
+            "## Audio and accessibility paths",
+            "## Feedback boundary",
+            "## Completion criterion",
+        )
+        for task_id, stem in modules.items():
+            with self.subTest(task=task_id):
+                module_path = f"references/tasks/{task_id}.md"
+                module = self.read(module_path)
+                cases = json.loads(self.read(f"tests/cases/{stem}.json"))
+                self.assertIn(f"]({module_path})", skill)
+                self.assertEqual(5, len(cases))
+                self.assertEqual(5, len({case["id"] for case in cases}))
+                for heading in headings:
+                    self.assertIn(heading, module)
+                self.assertIn("do not copy or closely paraphrase ETS", module)
+                self.assertIn("not an official ETS score", module)
+                self.assertIn("transcript", module.lower())
+                self.assertIn("pronunciation", module.lower())
+                for case in cases:
+                    self.assertTrue(case["request"].strip())
+                    self.assertGreaterEqual(len(case["expects"]), 4)
+
+        report = self.read("evaluations/speaking-2026-10-12.md")
+        self.assertIn("Pass: 10 of 10 cases and 40 of 40 observable criteria", report)
+        self.assertIn("## Limitations", report)
+        for stem in modules.values():
+            for case in json.loads(self.read(f"tests/cases/{stem}.json")):
+                self.assertIn(f"`{case['id']}`", report)
+
+        roadmap = self.read("docs/ROADMAP.md")
+        self.assertIn("- [x] Implement Listen and Repeat coaching", roadmap)
+        self.assertIn("- [x] Implement Take an Interview coaching", roadmap)
+
     def test_public_docs_disclose_independence_and_scoring_limit(self):
         combined = "\n".join(
             self.read(path)
@@ -301,6 +345,7 @@ class RepositoryContractTests(unittest.TestCase):
             "evaluations/build-a-sentence-2026-10-12.md",
             "evaluations/academic-discussion-2026-10-12.md",
             "evaluations/receptive-content-review-2026-10-12.md",
+            "evaluations/speaking-2026-10-12.md",
             "evaluations/write-an-email-2026-10-12.md",
             "references/feedback-contract.md",
             "references/tasks/reading.complete-the-words.md",
@@ -310,6 +355,8 @@ class RepositoryContractTests(unittest.TestCase):
             "references/tasks/listening.listen-to-a-conversation.md",
             "references/tasks/listening.listen-to-an-announcement.md",
             "references/tasks/listening.listen-to-an-academic-talk.md",
+            "references/tasks/speaking.listen-and-repeat.md",
+            "references/tasks/speaking.take-an-interview.md",
             "references/tasks/writing.build-a-sentence.md",
             "references/tasks/writing.write-an-email.md",
             "tests/cases/core.json",
@@ -323,6 +370,8 @@ class RepositoryContractTests(unittest.TestCase):
             "tests/cases/listen-to-a-conversation.json",
             "tests/cases/listen-to-an-announcement.json",
             "tests/cases/listen-to-an-academic-talk.json",
+            "tests/cases/listen-and-repeat.json",
+            "tests/cases/take-an-interview.json",
             "scripts/check_originality.py",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())
