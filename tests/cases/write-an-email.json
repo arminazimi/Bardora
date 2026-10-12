@@ -1,0 +1,52 @@
+[
+  {
+    "id": "write-an-email.practice-setup",
+    "request": "Give me an original Write an Email prompt about an academic scheduling problem and coach me without showing a model first.",
+    "expects": [
+      "identifies the recipient relationship purpose and register",
+      "provides two or three concrete prompt requirements",
+      "uses the purpose facts impact action close checklist",
+      "withholds a complete model pending an attempt"
+    ]
+  },
+  {
+    "id": "write-an-email.complete-feedback",
+    "request": "Prompt: Email the course coordinator. Explain why you missed yesterday's mandatory workshop because of a train delay, describe how missing it affects your lab access, and request an alternative session. Response: 'Dear Ms. Lee, I am writing because I miss yesterday workshop when train stopped. This workshop is needed before lab access, so now I cannot begin project. Could I attend Friday session instead? Thank you for your help. Sincerely, Amir.' Review and revise it.",
+    "expects": [
+      "maps all three prompt requirements and cites response evidence",
+      "reports a labeled 0-to-5 practice estimate with confidence and no section-score conversion",
+      "prioritizes language corrections without losing the learner's facts or request",
+      "provides a compact toolkit revised email and focused retry"
+    ]
+  },
+  {
+    "id": "write-an-email.missing-prompt",
+    "request": "Review this TOEFL email, but I lost the prompt: 'Hello, Our debate club booked Room 204 for Tuesday at 4, but another group was using it. We need meet every Tuesday because competition soon. Please give us a room. Thanks, Sam.'",
+    "expects": [
+      "states that prompt coverage and task fulfillment cannot be judged reliably",
+      "analyzes observable purpose request register and language",
+      "requests the missing prompt or requirements for reliable scoring",
+      "avoids a confident official section or total score"
+    ]
+  },
+  {
+    "id": "write-an-email.targeted-retry",
+    "request": "My neutral-professional email ended with 'Please solve this quickly.' Give me one focused retry for making the request specific and polite.",
+    "expects": [
+      "identifies the vague action and unsupported urgency",
+      "offers a natural request frame with a concrete action or deadline",
+      "asks the learner to rewrite only the request sentence",
+      "does not replace the exercise with a complete email"
+    ]
+  },
+  {
+    "id": "write-an-email.register-revision",
+    "request": "I am emailing a close classmate: 'Dear Esteemed Colleague, I hereby request your esteemed presence at our study session.' Make it appropriate without changing the invitation.",
+    "expects": [
+      "identifies the mismatch between formal wording and a close classmate",
+      "preserves the invitation's meaning",
+      "produces a concise friendly or neutral revision",
+      "explains that register should follow the relationship"
+    ]
+  }
+]

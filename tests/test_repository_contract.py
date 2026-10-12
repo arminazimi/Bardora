@@ -124,6 +124,34 @@ class RepositoryContractTests(unittest.TestCase):
         for case in cases:
             self.assertGreaterEqual(len(case["expects"]), 4)
 
+    def test_write_an_email_module_contract(self):
+        skill = self.read("SKILL.md")
+        module_path = "references/tasks/writing.write-an-email.md"
+        module = self.read(module_path)
+        cases = json.loads(self.read("tests/cases/write-an-email.json"))
+        self.assertIn(f"]({module_path})", skill)
+        self.assertEqual(5, len(cases))
+        self.assertEqual(5, len({case["id"] for case in cases}))
+        for heading in (
+            "## Evidence required",
+            "## Success dimensions",
+            "## High-impact failure modes",
+            "## Original-practice contract",
+            "## Prepare and practice",
+            "## Review and revise",
+            "## Feedback boundary",
+            "## Completion criterion",
+        ):
+            self.assertIn(heading, module)
+        self.assertIn("not an official ETS score", module)
+        for case in cases:
+            self.assertGreaterEqual(len(case["expects"]), 4)
+
+        report = self.read("evaluations/write-an-email-2026-10-12.md")
+        self.assertIn("Pass: 5 of 5 cases and 20 of 20 observable criteria", report)
+        for case in cases:
+            self.assertIn(f"`{case['id']}`", report)
+
     def test_new_receptive_task_module_contracts(self):
         skill = self.read("SKILL.md")
         modules = {
@@ -224,6 +252,7 @@ class RepositoryContractTests(unittest.TestCase):
             "evaluations/core-behavior-2026-10-12.md",
             "evaluations/build-a-sentence-2026-10-12.md",
             "evaluations/receptive-content-review-2026-10-12.md",
+            "evaluations/write-an-email-2026-10-12.md",
             "references/feedback-contract.md",
             "references/tasks/reading.complete-the-words.md",
             "references/tasks/reading.read-in-daily-life.md",
@@ -233,8 +262,10 @@ class RepositoryContractTests(unittest.TestCase):
             "references/tasks/listening.listen-to-an-announcement.md",
             "references/tasks/listening.listen-to-an-academic-talk.md",
             "references/tasks/writing.build-a-sentence.md",
+            "references/tasks/writing.write-an-email.md",
             "tests/cases/core.json",
             "tests/cases/build-a-sentence.json",
+            "tests/cases/write-an-email.json",
             "tests/cases/complete-the-words.json",
             "tests/cases/read-in-daily-life.json",
             "tests/cases/read-an-academic-passage.json",

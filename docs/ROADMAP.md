@@ -22,7 +22,7 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 ## 2 — Writing v0.2.0
 
 - [x] Implement Build a Sentence coaching and evaluations.
-- [ ] Implement Write an Email coaching and evaluations.
+- [x] Implement Write an Email coaching and evaluations.
 - [ ] Implement Write for an Academic Discussion coaching and evaluations.
 - [ ] Review feedback against public ETS guidance with human raters or qualified educators.
 
