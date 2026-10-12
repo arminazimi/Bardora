@@ -130,6 +130,9 @@ class RepositoryContractTests(unittest.TestCase):
             "references/tasks/reading.read-in-daily-life.md": "tests/cases/read-in-daily-life.json",
             "references/tasks/reading.read-an-academic-passage.md": "tests/cases/read-an-academic-passage.json",
             "references/tasks/listening.listen-and-choose-a-response.md": "tests/cases/listen-and-choose-a-response.json",
+            "references/tasks/listening.listen-to-a-conversation.md": "tests/cases/listen-to-a-conversation.json",
+            "references/tasks/listening.listen-to-an-announcement.md": "tests/cases/listen-to-an-announcement.json",
+            "references/tasks/listening.listen-to-an-academic-talk.md": "tests/cases/listen-to-an-academic-talk.json",
         }
         headings = (
             "## Evidence required",
@@ -166,6 +169,29 @@ class RepositoryContractTests(unittest.TestCase):
                     seen[request] = case_file.name
         self.assertEqual([], duplicates)
 
+    def test_listening_accessibility_contracts(self):
+        modules = {
+            "listening.listen-and-choose-a-response": "listen-and-choose-a-response",
+            "listening.listen-to-a-conversation": "listen-to-a-conversation",
+            "listening.listen-to-an-announcement": "listen-to-an-announcement",
+            "listening.listen-to-an-academic-talk": "listen-to-an-academic-talk",
+        }
+        for task_id, stem in modules.items():
+            with self.subTest(task=task_id):
+                module = self.read(f"references/tasks/{task_id}.md").lower()
+                cases = json.loads(self.read(f"tests/cases/{stem}.json"))
+                case_ids = {case["id"] for case in cases}
+                self.assertIn("## audio and accessibility paths", module)
+                self.assertIn("transcript-only", module)
+                self.assertRegex(module, r"screen[- ]reader")
+                self.assertTrue(
+                    any("accessibility" in case_id or "transcript" in case_id for case_id in case_ids)
+                )
+
+        report = self.read("evaluations/receptive-content-review-2026-10-12.md")
+        self.assertIn("Pass with declared limits", report)
+        self.assertIn("## Limitations", report)
+
     def test_public_docs_disclose_independence_and_scoring_limit(self):
         combined = "\n".join(
             self.read(path)
@@ -197,11 +223,15 @@ class RepositoryContractTests(unittest.TestCase):
             "docs/ROADMAP.md",
             "evaluations/core-behavior-2026-10-12.md",
             "evaluations/build-a-sentence-2026-10-12.md",
+            "evaluations/receptive-content-review-2026-10-12.md",
             "references/feedback-contract.md",
             "references/tasks/reading.complete-the-words.md",
             "references/tasks/reading.read-in-daily-life.md",
             "references/tasks/reading.read-an-academic-passage.md",
             "references/tasks/listening.listen-and-choose-a-response.md",
+            "references/tasks/listening.listen-to-a-conversation.md",
+            "references/tasks/listening.listen-to-an-announcement.md",
+            "references/tasks/listening.listen-to-an-academic-talk.md",
             "references/tasks/writing.build-a-sentence.md",
             "tests/cases/core.json",
             "tests/cases/build-a-sentence.json",
@@ -209,6 +239,10 @@ class RepositoryContractTests(unittest.TestCase):
             "tests/cases/read-in-daily-life.json",
             "tests/cases/read-an-academic-passage.json",
             "tests/cases/listen-and-choose-a-response.json",
+            "tests/cases/listen-to-a-conversation.json",
+            "tests/cases/listen-to-an-announcement.json",
+            "tests/cases/listen-to-an-academic-talk.json",
+            "scripts/check_originality.py",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())
         self.assertEqual([], missing)

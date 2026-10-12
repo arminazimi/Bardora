@@ -40,9 +40,9 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 ## 4 — Reading and Listening v0.4.0
 
 - [x] Implement the three Reading task modules.
-- [ ] Implement the four Listening task modules. Listen and Choose a Response is implemented; three modules remain.
-- [ ] Build an originality review for generated passages, scripts, and questions.
-- [ ] Test accessibility alternatives for audio-dependent practice.
+- [x] Implement the four Listening task modules.
+- [x] Build an originality review for generated passages, scripts, and questions.
+- [x] Test accessibility alternatives for audio-dependent practice.
 
 **Exit:** all seven receptive-skill modules pass behavior, originality, and accessibility checks.
 

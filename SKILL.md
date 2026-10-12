@@ -22,6 +22,9 @@ Before coaching `reading.complete-the-words`, read [references/tasks/reading.com
 Before coaching `reading.read-in-daily-life`, read [references/tasks/reading.read-in-daily-life.md](references/tasks/reading.read-in-daily-life.md).
 Before coaching `reading.read-an-academic-passage`, read [references/tasks/reading.read-an-academic-passage.md](references/tasks/reading.read-an-academic-passage.md).
 Before coaching `listening.listen-and-choose-a-response`, read [references/tasks/listening.listen-and-choose-a-response.md](references/tasks/listening.listen-and-choose-a-response.md).
+Before coaching `listening.listen-to-a-conversation`, read [references/tasks/listening.listen-to-a-conversation.md](references/tasks/listening.listen-to-a-conversation.md).
+Before coaching `listening.listen-to-an-announcement`, read [references/tasks/listening.listen-to-an-announcement.md](references/tasks/listening.listen-to-an-announcement.md).
+Before coaching `listening.listen-to-an-academic-talk`, read [references/tasks/listening.listen-to-an-academic-talk.md](references/tasks/listening.listen-to-an-academic-talk.md).
 
 ## Coaching loop
 

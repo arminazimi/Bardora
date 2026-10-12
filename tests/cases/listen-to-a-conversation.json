@@ -1,0 +1,52 @@
+[
+  {
+    "id": "listen-to-a-conversation.practice-setup",
+    "request": "Create a moderately challenging original Listen to a Conversation drill.",
+    "expects": [
+      "identifies Listen to a Conversation",
+      "uses an original two-speaker social dialogue",
+      "asks about purpose detail attitude or inference",
+      "states the modality and withholds the transcript or key as appropriate"
+    ]
+  },
+  {
+    "id": "listen-to-a-conversation.updated-detail",
+    "request": "Dialogue: A says the study room is booked for three. B replies, 'Actually, the librarian moved us to Room 8 at three thirty.' I answered Room 3 at three. Coach me.",
+    "expects": [
+      "identifies the updated location and time",
+      "cites B's correction as decisive evidence",
+      "names old-versus-updated information as the error pattern",
+      "offers one targeted correction retry"
+    ]
+  },
+  {
+    "id": "listen-to-a-conversation.attitude-limit",
+    "request": "Transcript: A: 'Great, another form to complete.' B: 'It should only take a minute.' Can you score how sarcastic A sounded?",
+    "expects": [
+      "does not score audible sarcasm from text alone",
+      "notes that the wording may suggest frustration or irony",
+      "names tone and prosody as missing evidence",
+      "offers an audio or language-only fallback"
+    ]
+  },
+  {
+    "id": "listen-to-a-conversation.inference-boundary",
+    "request": "A student says, 'If the rain gets worse, I may take the bus.' I concluded the student definitely took the bus. Evaluate my inference.",
+    "expects": [
+      "rejects the definite conclusion",
+      "identifies if and may as uncertainty cues",
+      "states a narrower supported inference",
+      "offers an uncertainty-cue retry"
+    ]
+  },
+  {
+    "id": "listen-to-a-conversation.accessibility",
+    "request": "Create a screen-reader-friendly Listen to a Conversation exercise with an audio fallback.",
+    "expects": [
+      "uses explicit speaker labels in the transcript fallback",
+      "keeps questions and options screen-reader compatible",
+      "does not rely on stereo position color or images for speaker identity",
+      "states which listening evidence the fallback cannot test"
+    ]
+  }
+]

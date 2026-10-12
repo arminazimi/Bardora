@@ -1,0 +1,52 @@
+[
+  {
+    "id": "listen-to-an-announcement.practice-setup",
+    "request": "Give me an original Listen to an Announcement practice set.",
+    "expects": [
+      "identifies Listen to an Announcement",
+      "uses an original classroom or campus-related announcement",
+      "asks about purpose organization detail or next action",
+      "states the modality and withholds the transcript or key as appropriate"
+    ]
+  },
+  {
+    "id": "listen-to-an-announcement.purpose",
+    "request": "Announcement: 'Because the west entrance is being repaired, the library will open through the garden door this weekend. Hours remain unchanged.' I said the purpose is to announce shorter library hours. Coach me.",
+    "expects": [
+      "identifies the temporary entrance change as the purpose",
+      "cites hours remain unchanged",
+      "distinguishes the repair reason from the listener action",
+      "offers a purpose retry"
+    ]
+  },
+  {
+    "id": "listen-to-an-announcement.updated-sequence",
+    "request": "The speaker first says presentations start Tuesday, then corrects this to Thursday because the hall is unavailable. I answered Tuesday. Explain the error.",
+    "expects": [
+      "identifies Thursday as the updated detail",
+      "uses the correction and reason as evidence",
+      "names old-versus-updated information as the error pattern",
+      "offers a changed-detail retry"
+    ]
+  },
+  {
+    "id": "listen-to-an-announcement.supported-action",
+    "request": "Announcement: 'Lab coats will be distributed outside Room 12 before the safety session. Students without a coat should arrive ten minutes early.' What should a student without a coat do?",
+    "expects": [
+      "answers arrive ten minutes early",
+      "connects the instruction to coat distribution before the session",
+      "does not add an unsupported requirement",
+      "explains the purpose-to-action relationship"
+    ]
+  },
+  {
+    "id": "listen-to-an-announcement.accessibility",
+    "request": "I cannot play audio. Give me an accessible announcement practice alternative.",
+    "expects": [
+      "provides a structured transcript alternative",
+      "labels it as content or organization practice",
+      "states that audio decoding and prosody are untested",
+      "keeps questions and options screen-reader compatible"
+    ]
+  }
+]

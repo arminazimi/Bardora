@@ -1,0 +1,52 @@
+[
+  {
+    "id": "listen-to-an-academic-talk.practice-setup",
+    "request": "Give me an original medium-difficulty Listen to an Academic Talk diagnostic.",
+    "expects": [
+      "identifies Listen to an Academic Talk",
+      "uses an original self-contained academic talk",
+      "asks about key idea organization detail function and inference",
+      "states modality and diagnostic scope while withholding the key"
+    ]
+  },
+  {
+    "id": "listen-to-an-academic-talk.key-idea",
+    "request": "Talk summary: Coastal plants trap windblown sand; the growing dunes then protect inland soil from salt spray. I chose 'Salt spray helps coastal plants grow' as the main idea. Coach me.",
+    "expects": [
+      "rejects the reversed relationship",
+      "identifies dune formation and protection as the key idea",
+      "explains the causal chain",
+      "offers a cause-and-effect retry"
+    ]
+  },
+  {
+    "id": "listen-to-an-academic-talk.example-function",
+    "request": "A talk claims animals use landmarks to navigate, then describes bees learning the position of a striped panel beside a feeder. Why is the bee study included?",
+    "expects": [
+      "identifies the study as evidence or illustration for landmark navigation",
+      "connects the striped panel to the general claim",
+      "does not treat the feeder as the talk's main topic",
+      "explains example function"
+    ]
+  },
+  {
+    "id": "listen-to-an-academic-talk.inference-boundary",
+    "request": "A talk says one wetland recovered more quickly after native grasses were replanted. I concluded replanting always restores every wetland. Evaluate my inference.",
+    "expects": [
+      "rejects the universal conclusion",
+      "identifies one wetland and more quickly as limits",
+      "states a narrower supported inference",
+      "offers an inference-strength retry"
+    ]
+  },
+  {
+    "id": "listen-to-an-academic-talk.transcript-limit",
+    "request": "I understood the academic-talk transcript perfectly. Can you confirm my real-time listening and note-taking are excellent?",
+    "expects": [
+      "does not infer real-time listening or note-taking from transcript success",
+      "credits observable discourse comprehension",
+      "names pacing pronunciation recognition and memory as missing evidence",
+      "offers an audio-based or structured-transcript next step"
+    ]
+  }
+]
