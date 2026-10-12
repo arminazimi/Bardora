@@ -21,6 +21,13 @@ TASK_IDS = {
     "speaking.take-an-interview",
 }
 
+SECTION_ROWS = {
+    "| Reading | 3 | 50 | 30 minutes | Two-stage adaptive |",
+    "| Listening | 4 | 47 | 29 minutes | Two-stage adaptive |",
+    "| Writing | 3 | 12 | 23 minutes | Linear |",
+    "| Speaking | 2 | 11 | 8 minutes | Linear |",
+}
+
 
 class RepositoryContractTests(unittest.TestCase):
     def read(self, relative_path: str) -> str:
@@ -46,8 +53,17 @@ class RepositoryContractTests(unittest.TestCase):
         matrix = self.read("docs/toefl-2026-task-matrix.md")
         missing = sorted(task_id for task_id in TASK_IDS if f"`{task_id}`" not in matrix)
         self.assertEqual([], missing, f"Task matrix is missing: {missing}")
-        self.assertGreaterEqual(matrix.count("https://www.ets.org/"), 2)
+        for expected_row in SECTION_ROWS:
+            self.assertIn(expected_row, matrix)
+        self.assertGreaterEqual(matrix.count("https://www.ets.org/"), 6)
         self.assertIn("January 21, 2026", matrix)
+        self.assertIn("Published items (may vary)", matrix)
+        self.assertIn("Published blueprint target", matrix)
+        self.assertIn("content/dam/ets-org/", matrix)
+        self.assertNotIn("content/dam/ets-india/", matrix)
+        self.assertIn("1–6 scale in 0.5 increments", matrix)
+        self.assertIn("two-year transition", matrix)
+        self.assertIn("Scores are valid for two years", matrix)
 
     def test_every_task_has_a_behavior_case(self):
         cases = json.loads(self.read("tests/cases/core.json"))
@@ -65,11 +81,22 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertIn("not endorsed or approved by ets", combined)
         self.assertIn("not an official ets score", combined)
 
+    def test_ip_notice_covers_trademarks_and_protected_material(self):
+        notice = self.read("NOTICE").lower()
+        readme = self.read("README.md").lower()
+        contributing = self.read("CONTRIBUTING.md").lower()
+        self.assertIn("not endorsed or approved by ets", notice)
+        self.assertIn("does not grant rights", notice)
+        for protected_type in ("passages", "audio", "rubrics", "graphics"):
+            self.assertIn(protected_type, readme)
+            self.assertIn(protected_type, contributing)
+
     def test_required_project_documents_exist(self):
         required = {
             "README.md",
             "SKILL.md",
             "LICENSE",
+            "NOTICE",
             "CONTRIBUTING.md",
             "docs/PRD.md",
             "docs/architecture.md",

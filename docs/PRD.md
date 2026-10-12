@@ -2,7 +2,7 @@
 
 ## Product
 
-This repository is the working home of a worldwide, open-source Agent Skill for preparation aligned with the TOEFL® test format effective January 21, 2026. It provides original practice, formative feedback, strategy, and structured improvement loops across all four sections.
+This repository is the working home of a worldwide, open-source Agent Skill for preparation aligned with the TOEFL iBT® test format effective January 21, 2026. It provides original practice, formative feedback, strategy, and structured improvement loops across all four sections.
 
 An independent public brand must replace the current repository identifier before v1.0 because ETS trademark guidance restricts use of ETS marks in product and domain names.
 
@@ -47,7 +47,7 @@ The first release is English-first. The coach may explain concepts in the learne
 - Speech recognition, text-to-speech, user accounts, hosted storage, or analytics services.
 - Automated spaced repetition and longitudinal learner models.
 - A complete simulated test UI, payments, classrooms, or teacher dashboards.
-- Reproduction or distribution of ETS questions, audio, rubrics, or answer keys.
+- Reproduction or distribution of unlicensed ETS questions, passages, prompts, audio, transcripts, sample responses, answer keys, rubrics, directions, or graphics.
 
 ## Core user journeys
 
@@ -119,3 +119,6 @@ The coach confirms time and modality constraints, samples relevant task types, r
 - What opt-in, privacy-preserving learner-state format should support progress tracking?
 - Which agent environments will receive maintained installation adapters for v1.0?
 
+## Trademark notice
+
+TOEFL and TOEFL iBT are registered trademarks of ETS in the United States and other countries. This project is not endorsed or approved by ETS.

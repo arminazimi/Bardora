@@ -1,9 +1,9 @@
 # Independent English Test Prep Agent
 
-An open-source Agent Skill for preparation aligned with the TOEFL® test format that took effect on January 21, 2026.
+An open-source Agent Skill for preparation aligned with the TOEFL iBT® test format that took effect on January 21, 2026.
 
 > [!IMPORTANT]
-> This is an independent learning project. It is not endorsed or approved by ETS. TOEFL and TOEFL iBT are registered trademarks of ETS. The project does not reproduce secure or copyrighted test questions, and its feedback is not an official ETS score.
+> This is an independent learning project. TOEFL and TOEFL iBT are registered trademarks of ETS in the United States and other countries. This project is not endorsed or approved by ETS. It does not reproduce or distribute unlicensed ETS questions, passages, prompts, audio, transcripts, sample responses, answer keys, rubrics, directions, or graphics, and its feedback is not an official ETS score.
 
 > [!WARNING]
 > The existing repository slug is a working identifier. Current ETS trademark guidance says ETS marks should not be incorporated into a product name, domain name, or similar identifier. Selecting an independent public brand and reviewing the final attribution are release blockers for v1.0.
@@ -29,6 +29,7 @@ SKILL.md                              Agent entry point
 docs/PRD.md                           Product requirements and MVP boundary
 docs/architecture.md                  Portable architecture and contracts
 docs/toefl-2026-task-matrix.md        ETS-sourced 2026 format matrix
+docs/research/                         Dated official-source audits
 docs/ROADMAP.md                       Delivery phases and completion criteria
 references/feedback-contract.md       Shared coaching output contract
 tests/cases/core.json                 Behavior-oriented evaluation cases
@@ -60,9 +61,10 @@ These tests validate packaging, source traceability, all 12 task types, evaluati
 - [Product requirements](docs/PRD.md)
 - [Architecture](docs/architecture.md)
 - [TOEFL iBT 2026 task matrix](docs/toefl-2026-task-matrix.md)
+- [ETS official-source audit — October 12, 2026](docs/research/ets-source-audit-2026-10-12.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE).
+Original project material is available under the Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE). The license does not grant rights to ETS trademarks or copyrighted ETS material.
