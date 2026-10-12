@@ -31,7 +31,7 @@ class RepositoryContractTests(unittest.TestCase):
         match = re.match(r"\A---\n(.*?)\n---\n", skill, re.DOTALL)
         self.assertIsNotNone(match, "SKILL.md must start with YAML frontmatter")
         frontmatter = match.group(1)
-        self.assertRegex(frontmatter, r"(?m)^name: toefl-ibt-2026-coach$")
+        self.assertRegex(frontmatter, r"(?m)^name: english-test-prep-coach$")
         self.assertRegex(frontmatter, r"(?m)^description: .+")
         self.assertNotIn("TODO", skill)
 
@@ -84,4 +84,3 @@ class RepositoryContractTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

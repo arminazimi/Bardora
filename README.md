@@ -40,7 +40,7 @@ tests/test_repository_contract.py     Offline repository checks
 Clone the repository into a location your agent can discover as a skill, or copy the repository folder into that agent's skills directory. Then invoke it explicitly:
 
 ```text
-Use $toefl-ibt-2026-coach to give me a Writing diagnostic.
+Use $english-test-prep-coach to give me a Writing diagnostic.
 ```
 
 The skill is intentionally platform-neutral: it depends on readable Markdown and JSON, not a vendor SDK. Platform-specific adapters may be added later without changing the coaching contract.

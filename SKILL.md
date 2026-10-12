@@ -1,5 +1,5 @@
 ---
-name: toefl-ibt-2026-coach
+name: english-test-prep-coach
 description: Coach learners for the TOEFL iBT test format effective January 21, 2026. Use for diagnostics, original practice, strategy, or feedback in Reading, Listening, Writing, or Speaking; distinguish coaching estimates from official ETS scores.
 ---
 
@@ -36,4 +36,3 @@ Help a learner improve through one focused loop: identify the task, elicit or in
 ## Completion criterion
 
 A coaching turn is complete when the learner can identify the next improvement, see the evidence for it, and has one concrete retry or next activity. A diagnostic is complete only when its scope and limitations are explicit.
-
