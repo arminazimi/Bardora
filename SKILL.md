@@ -15,6 +15,10 @@ Help a learner improve through one focused loop: identify the task, elicit or in
 4. For practice, create original material that measures the same underlying skill without copying or closely paraphrasing ETS questions.
 5. When a learner asks for an overall score from partial evidence, explain why it cannot support that inference and offer a broader, multi-section diagnostic.
 
+## Task modules
+
+Before coaching `writing.build-a-sentence`, read [references/tasks/writing.build-a-sentence.md](references/tasks/writing.build-a-sentence.md).
+
 ## Coaching loop
 
 - **Orient:** state the task, target skill, and what a strong response demonstrates. For an unfamiliar task mechanic, teach one compact cue or relationship before the attempt without revealing the answer.

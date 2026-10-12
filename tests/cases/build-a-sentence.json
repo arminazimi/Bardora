@@ -1,0 +1,33 @@
+[
+  {
+    "id": "build-a-sentence.practice-setup",
+    "request": "Give me one original Build a Sentence practice item.",
+    "expects": [
+      "identifies Build a Sentence",
+      "teaches one compact grammar cue",
+      "uses original chunks with at least one complete solution",
+      "withholds the answer until an attempt"
+    ]
+  },
+  {
+    "id": "build-a-sentence.feedback",
+    "request": "Chunks: 'although it was raining' / 'the match continued' / 'until sunset'. My answer: 'Although the match continued it was raining until sunset.' Coach me.",
+    "expects": [
+      "checks every provided chunk",
+      "identifies the broken contrast-clause relationship with response evidence",
+      "shows a corrected sentence after the attempt",
+      "offers one new contrast item as a retry"
+    ]
+  },
+  {
+    "id": "build-a-sentence.valid-alternative",
+    "request": "Chunks: 'after the lecture ended' / 'the students asked questions'. My answer: 'The students asked questions after the lecture ended.' Is this correct?",
+    "expects": [
+      "accepts the grammatical answer",
+      "confirms both chunks are used once",
+      "explains the time relationship",
+      "does not invent an error based only on order"
+    ]
+  }
+]
+

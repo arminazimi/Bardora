@@ -81,6 +81,24 @@ class RepositoryContractTests(unittest.TestCase):
         for case in cases:
             self.assertIn(f"`{case['id']}`", report)
 
+    def test_build_a_sentence_module_contract(self):
+        skill = self.read("SKILL.md")
+        module_path = "references/tasks/writing.build-a-sentence.md"
+        module = self.read(module_path)
+        cases = json.loads(self.read("tests/cases/build-a-sentence.json"))
+        self.assertIn(f"]({module_path})", skill)
+        self.assertEqual(3, len(cases))
+        self.assertEqual(3, len({case["id"] for case in cases}))
+        for heading in (
+            "## Evidence required",
+            "## Success dimensions",
+            "## Original-practice contract",
+            "## Completion criterion",
+        ):
+            self.assertIn(heading, module)
+        for case in cases:
+            self.assertGreaterEqual(len(case["expects"]), 4)
+
     def test_public_docs_disclose_independence_and_scoring_limit(self):
         combined = "\n".join(
             self.read(path)
@@ -112,7 +130,9 @@ class RepositoryContractTests(unittest.TestCase):
             "docs/ROADMAP.md",
             "evaluations/core-behavior-2026-10-12.md",
             "references/feedback-contract.md",
+            "references/tasks/writing.build-a-sentence.md",
             "tests/cases/core.json",
+            "tests/cases/build-a-sentence.json",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())
         self.assertEqual([], missing)
