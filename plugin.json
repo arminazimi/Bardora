@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "english-test-prep-coach",
+  "version": "0.1.0",
+  "description": "Independent, evidence-led English test preparation coaching across Reading, Listening, Writing, and Speaking.",
+  "author": {
+    "name": "Armin Azimi",
+    "url": "https://github.com/arminazimi"
+  },
+  "homepage": "https://github.com/arminazimi/toefl-coach-ai",
+  "repository": "https://github.com/arminazimi/toefl-coach-ai",
+  "license": "Apache-2.0"
+}

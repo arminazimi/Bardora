@@ -28,7 +28,7 @@ official matrix        evidence + priorities diagnostic + plan
      Feedback, retry, next step
 ```
 
-The repository is the installable skill. `SKILL.md` is the stable entry interface; detailed and changeable knowledge lives in linked documents. This keeps automatic skill loading small while preserving traceability.
+The repository root is the installable, skills-only plugin package. `SKILL.md` remains the stable and canonical coaching interface; `skills/coach/SKILL.md` is a thin host-discoverable route to it. Detailed and changeable knowledge lives in linked documents. This keeps automatic skill loading small, prevents platform forks, and preserves traceability.
 
 ## Components
 
@@ -57,6 +57,8 @@ Owns request routing, the coaching loop, global integrity boundaries, and comple
 ### Optional adapters
 
 Adapters may translate host-specific audio, storage, or tool APIs into the core contracts. They should contain integration mechanics only; coaching behavior remains in the shared skill and references.
+
+The root portable manifest, `.codex-plugin/plugin.json`, and `.claude-plugin/plugin.json` are packaging adapters. They share one name and semantic version and expose the same `skills/` tree. They do not duplicate coaching behavior or require a backend.
 
 ## Stable task identifiers
 
@@ -127,7 +129,8 @@ Every release that changes format facts must record the source and its effective
 
 | Decision | Rationale |
 |---|---|
-| Repository root is the skill folder | Simplifies installation and keeps one canonical package |
+| Repository root is the plugin and canonical skill folder | Supports portable packaging while keeping one coaching source of truth |
+| Thin `skills/coach` route | Lets plugin hosts discover the canonical root skill without duplicating it |
 | Markdown/JSON portable core | Works across agent hosts and is easy to audit |
 | Facts separated from behavior | ETS format can change without rewriting the coaching loop |
 | Qualitative feedback before score prediction | Avoids false precision until calibration evidence exists |

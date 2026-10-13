@@ -1,0 +1,35 @@
+{
+  "name": "english-test-prep-coach",
+  "version": "0.1.0",
+  "description": "Independent, evidence-led English test preparation coaching across Reading, Listening, Writing, and Speaking.",
+  "author": {
+    "name": "Armin Azimi",
+    "url": "https://github.com/arminazimi"
+  },
+  "homepage": "https://github.com/arminazimi/toefl-coach-ai",
+  "repository": "https://github.com/arminazimi/toefl-coach-ai",
+  "license": "Apache-2.0",
+  "keywords": [
+    "english-learning",
+    "test-preparation",
+    "reading",
+    "listening",
+    "writing",
+    "speaking"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "English Test Prep Coach",
+    "shortDescription": "Evidence-led practice and feedback for all four English test skills.",
+    "longDescription": "Practice Reading, Listening, Writing, and Speaking through original tasks, evidence-based feedback, focused retries, and privacy-preserving learning continuity.",
+    "developerName": "Armin Azimi",
+    "category": "Education",
+    "capabilities": [],
+    "websiteURL": "https://github.com/arminazimi/toefl-coach-ai",
+    "defaultPrompt": [
+      "Give me a short diagnostic across all four skills.",
+      "Coach my writing and give me one focused retry.",
+      "Create a study plan from my current weaknesses."
+    ]
+  }
+}

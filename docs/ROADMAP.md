@@ -57,11 +57,13 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 
 ## 6 — Quality and multi-platform release
 
+- [x] Add one skills-only v0.1.0 package with portable, Codex, and Claude manifests.
+- [x] Add a deterministic release-archive builder and offline packaging contract tests.
 - [ ] Add automated behavior runners for maintained agent hosts.
 - [ ] Evaluate across proficiency levels and adversarial integrity requests.
 - [ ] Complete accessibility, privacy, copyright, and trademark reviews.
 - [ ] Select an independent brand and migrate the repository identifier.
-- [ ] Publish installation guides and a versioned release checklist.
+- [ ] Validate and publish installation guides plus a versioned release checklist for both maintained hosts.
 - [ ] Add security reporting, protected review rules, scanning, checksums, and release provenance.
 
 **Exit:** release gates pass in at least two maintained agent environments and the branding blocker is closed.

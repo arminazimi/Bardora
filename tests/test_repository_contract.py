@@ -479,11 +479,15 @@ class RepositoryContractTests(unittest.TestCase):
         required = {
             "README.md",
             "SKILL.md",
+            "plugin.json",
+            ".codex-plugin/plugin.json",
+            ".claude-plugin/plugin.json",
             "LICENSE",
             "NOTICE",
             "CONTRIBUTING.md",
             "docs/PRD.md",
             "docs/PRODUCT-STRATEGY.md",
+            "docs/PLUGIN-PACKAGING.md",
             "docs/architecture.md",
             "docs/research/ecosystem-strategy-2026-10-12.md",
             "docs/toefl-2026-task-matrix.md",
@@ -526,6 +530,8 @@ class RepositoryContractTests(unittest.TestCase):
             "tests/fixtures/learner-state.v1.json",
             "schemas/learner-state.v1.schema.json",
             "scripts/check_originality.py",
+            "scripts/build_plugin_archive.py",
+            "skills/coach/SKILL.md",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())
         self.assertEqual([], missing)

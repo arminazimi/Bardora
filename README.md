@@ -10,7 +10,7 @@ An open-source Agent Skill for preparation aligned with the TOEFL iBT® test for
 
 ## Project status
 
-**Task coaching and learning intelligence implemented; release work continues.** The repository defines the product, portable skill interface, official-format task matrix, architecture, task-specific coaching for Reading, Listening, Writing, and Speaking, and privacy-preserving progress continuity. Human calibration, cross-platform validation, independent branding, and release gates remain before a stable release.
+**Task coaching, learning intelligence, and the v0.1.0 plugin package are implemented; host validation continues.** The repository defines the product, portable skill interface, official-format task matrix, architecture, task-specific coaching for Reading, Listening, Writing, and Speaking, and privacy-preserving progress continuity. Human calibration, installed cross-platform validation, independent public branding, and release gates remain before a stable release.
 
 ## What the skill does
 
@@ -25,7 +25,11 @@ The 2026 format contains 12 task types across four sections. See the [task-type 
 ## Repository map
 
 ```text
-SKILL.md                              Agent entry point
+plugin.json                           Portable plugin manifest
+.codex-plugin/plugin.json             Codex adapter and presentation metadata
+.claude-plugin/plugin.json            Claude Code adapter
+SKILL.md                              Canonical coaching entry point
+skills/coach/SKILL.md                 Thin plugin route to the canonical skill
 docs/PRD.md                           Product requirements and MVP boundary
 docs/architecture.md                  Portable architecture and contracts
 docs/toefl-2026-task-matrix.md        ETS-sourced 2026 format matrix
@@ -50,7 +54,17 @@ Clone the repository into a location your agent can discover as a skill, or copy
 Use $english-test-prep-coach to give me a Writing diagnostic.
 ```
 
-The skill is intentionally platform-neutral: it depends on readable Markdown and JSON, not a vendor SDK. Platform-specific adapters may be added later without changing the coaching contract.
+The skill is intentionally platform-neutral: it depends on readable Markdown and JSON, not a vendor SDK.
+
+## Build as a Plugin
+
+Build the same skills-only package for Codex and Claude Code:
+
+```bash
+python3 scripts/build_plugin_archive.py
+```
+
+See [plugin packaging and local validation](docs/PLUGIN-PACKAGING.md) for the manifest roles and platform-specific checks. The v0.1.0 package has no backend, account, analytics, or paid API dependency.
 
 ## Validate locally
 
@@ -72,6 +86,7 @@ These tests validate packaging, source traceability, all 12 task types, evaluati
 - [Core behavior evaluation — October 12, 2026](evaluations/core-behavior-2026-10-12.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Product and ecosystem strategy](docs/PRODUCT-STRATEGY.md)
+- [Plugin packaging](docs/PLUGIN-PACKAGING.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License
