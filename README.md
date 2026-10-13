@@ -10,7 +10,7 @@ An open-source Agent Skill for preparation aligned with the TOEFL iBT® test for
 
 ## Project status
 
-**Task coaching implemented; release work continues.** The repository defines the product, portable skill interface, official-format task matrix, architecture, and task-specific coaching for Reading, Listening, Writing, and Speaking. Human calibration, learning intelligence, cross-platform validation, independent branding, and release gates remain before a stable release.
+**Task coaching and learning intelligence implemented; release work continues.** The repository defines the product, portable skill interface, official-format task matrix, architecture, task-specific coaching for Reading, Listening, Writing, and Speaking, and privacy-preserving progress continuity. Human calibration, cross-platform validation, independent branding, and release gates remain before a stable release.
 
 ## What the skill does
 
@@ -31,6 +31,7 @@ docs/architecture.md                  Portable architecture and contracts
 docs/toefl-2026-task-matrix.md        ETS-sourced 2026 format matrix
 docs/research/                         Dated official-source audits
 docs/ROADMAP.md                       Delivery phases and completion criteria
+docs/PRODUCT-STRATEGY.md              Open-core, growth, ecosystem, and paid strategy
 references/feedback-contract.md       Shared coaching output contract
 references/learning-intelligence.md   Diagnostics, plans, review, and progress
 references/learner-state.md           Consent and portable-state lifecycle
@@ -67,8 +68,10 @@ These tests validate packaging, source traceability, all 12 task types, evaluati
 - [Architecture](docs/architecture.md)
 - [TOEFL iBT 2026 task matrix](docs/toefl-2026-task-matrix.md)
 - [ETS official-source audit — October 12, 2026](docs/research/ets-source-audit-2026-10-12.md)
+- [Global ecosystem strategy research — October 12, 2026](docs/research/ecosystem-strategy-2026-10-12.md)
 - [Core behavior evaluation — October 12, 2026](evaluations/core-behavior-2026-10-12.md)
 - [Roadmap](docs/ROADMAP.md)
+- [Product and ecosystem strategy](docs/PRODUCT-STRATEGY.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License

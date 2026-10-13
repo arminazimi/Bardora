@@ -400,6 +400,63 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertIn("- [x] Define a privacy-preserving, opt-in learner-state schema", roadmap)
         self.assertIn("- [x] Test state portability across supported hosts", roadmap)
 
+    def test_product_strategy_and_extended_roadmap_contract(self):
+        strategy = self.read("docs/PRODUCT-STRATEGY.md")
+        for heading in (
+            "## Vision",
+            "## Strategic thesis",
+            "## Product layers",
+            "## Sequenced growth plan",
+            "## Free and paid covenant",
+            "## Measurement system",
+            "## Growth loops",
+            "## Non-negotiable trust rules",
+            "## Decisions still needed",
+        ):
+            self.assertIn(heading, strategy)
+        for stage in (
+            "Stage A — Trusted open-source v1.0",
+            "Stage B — Adoption and community v1.5",
+            "Stage C — Hosted learner platform v2.0",
+            "Stage D — Educator platform and paid pilots v2.5",
+            "Stage E — Sustainable Pro v3.0",
+            "Stage F — Open ecosystem v4.0",
+            "Stage G — Global reference ecosystem",
+        ):
+            self.assertIn(stage, strategy)
+        self.assertIn("Open learning core — free forever", strategy)
+        self.assertIn("Weekly learners completing an evidence-backed improvement loop", strategy)
+        self.assertIn("Do not set growth or conversion targets without a baseline", strategy)
+        self.assertIn("Free, Pro, Educator, and Institution", strategy)
+        self.assertIn("Keep the public brand independent", strategy)
+        self.assertIn("](research/ecosystem-strategy-2026-10-12.md)", strategy)
+        self.assertIn("child-privacy review", strategy)
+        self.assertIn("artifact provenance", strategy)
+
+        research = self.read("docs/research/ecosystem-strategy-2026-10-12.md")
+        for source_domain in (
+            "https://www.ets.org/",
+            "https://docs.github.com/",
+            "https://developers.openai.com/",
+            "https://platform.claude.com/",
+            "https://www.ftc.gov/",
+            "https://eur-lex.europa.eu/",
+        ):
+            self.assertIn(source_domain, research)
+        self.assertIn("## Non-negotiable launch gates", research)
+        self.assertIn("## Sustainable monetization boundary", research)
+        self.assertIn("## Release and security hygiene", research)
+
+        roadmap = self.read("docs/ROADMAP.md")
+        for phase in range(8, 14):
+            self.assertIn(f"## {phase} —", roadmap)
+        self.assertIn("](PRODUCT-STRATEGY.md)", roadmap)
+        for issue_number in range(19, 26):
+            self.assertIn(f"/issues/{issue_number}", roadmap)
+
+        readme = self.read("README.md")
+        self.assertIn("](docs/PRODUCT-STRATEGY.md)", readme)
+
     def test_public_docs_disclose_independence_and_scoring_limit(self):
         combined = "\n".join(
             self.read(path)
@@ -426,7 +483,9 @@ class RepositoryContractTests(unittest.TestCase):
             "NOTICE",
             "CONTRIBUTING.md",
             "docs/PRD.md",
+            "docs/PRODUCT-STRATEGY.md",
             "docs/architecture.md",
+            "docs/research/ecosystem-strategy-2026-10-12.md",
             "docs/toefl-2026-task-matrix.md",
             "docs/ROADMAP.md",
             "evaluations/core-behavior-2026-10-12.md",
