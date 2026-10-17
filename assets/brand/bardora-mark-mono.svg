@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Bardora monochrome mark</title>
+  <desc id="desc">The one-color Scholar Portal mark for print and constrained applications.</desc>
+  <g fill="none" stroke="#111820" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M232 52A204 204 0 0 0 232 460M280 52A204 204 0 0 1 280 460" stroke-width="72"/>
+    <path d="M238 150h38a53 53 0 0 1 0 106h-38M238 256h46a53 53 0 0 1 0 106h-46" stroke-width="44"/>
+  </g>
+</svg>

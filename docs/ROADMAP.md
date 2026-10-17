@@ -62,7 +62,8 @@ Each phase has a checkable exit condition. GitHub issues track the work; this fi
 - [ ] Add automated behavior runners for maintained agent hosts.
 - [ ] Evaluate across proficiency levels and adversarial integrity requests.
 - [ ] Complete accessibility, privacy, copyright, and trademark reviews.
-- [ ] Select an independent brand and migrate the repository identifier.
+- [x] Select the independent Bardora brand and publish its initial identity system.
+- [ ] Migrate the repository identifier to the Bardora name and preserve redirects.
 - [ ] Validate and publish installation guides plus a versioned release checklist for both maintained hosts.
 - [ ] Add security reporting, protected review rules, scanning, checksums, and release provenance.
 

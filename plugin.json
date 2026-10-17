@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
-  "name": "english-test-prep-coach",
+  "name": "bardora",
   "version": "0.1.0",
-  "description": "Independent, evidence-led English test preparation coaching across Reading, Listening, Writing, and Speaking.",
+  "description": "Bardora: evidence-led English mastery across Reading, Listening, Writing, and Speaking.",
   "author": {
     "name": "Armin Azimi",
     "url": "https://github.com/arminazimi"

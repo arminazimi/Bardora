@@ -1,12 +1,18 @@
-# Independent English Test Prep Agent
+<p align="center">
+  <img src="assets/brand/bardora-lockup.svg" alt="Bardora — The modern art of English mastery." width="720">
+</p>
 
-An open-source Agent Skill for preparation aligned with the TOEFL iBT® test format that took effect on January 21, 2026.
+# Bardora
+
+**The modern art of English mastery.**
+
+Bardora is an open-source Agent Skill for preparation aligned with the TOEFL iBT® test format that took effect on January 21, 2026.
 
 > [!IMPORTANT]
 > This is an independent learning project. TOEFL and TOEFL iBT are registered trademarks of ETS in the United States and other countries. This project is not endorsed or approved by ETS. It does not reproduce or distribute unlicensed ETS questions, passages, prompts, audio, transcripts, sample responses, answer keys, rubrics, directions, or graphics, and its feedback is not an official ETS score.
 
 > [!WARNING]
-> The existing repository slug is a working identifier. Current ETS trademark guidance says ETS marks should not be incorporated into a product name, domain name, or similar identifier. Selecting an independent public brand and reviewing the final attribution are release blockers for v1.0.
+> Bardora is the independent product name. The existing repository slug is a temporary technical identifier and will be migrated separately. Current ETS trademark guidance says ETS marks should not be incorporated into a product name, domain name, or similar identifier.
 
 ## Project status
 
@@ -36,6 +42,7 @@ docs/toefl-2026-task-matrix.md        ETS-sourced 2026 format matrix
 docs/research/                         Dated official-source audits
 docs/ROADMAP.md                       Delivery phases and completion criteria
 docs/PRODUCT-STRATEGY.md              Open-core, growth, ecosystem, and paid strategy
+docs/brand.md                         Brand identity, assets, palette, and usage
 references/feedback-contract.md       Shared coaching output contract
 references/learning-intelligence.md   Diagnostics, plans, review, and progress
 references/learner-state.md           Consent and portable-state lifecycle
@@ -51,7 +58,7 @@ tests/test_repository_contract.py     Offline repository checks
 Clone the repository into a location your agent can discover as a skill, or copy the repository folder into that agent's skills directory. Then invoke it explicitly:
 
 ```text
-Use $english-test-prep-coach to give me a Writing diagnostic.
+Use $bardora to give me a Writing diagnostic.
 ```
 
 The skill is intentionally platform-neutral: it depends on readable Markdown and JSON, not a vendor SDK.
@@ -87,6 +94,7 @@ These tests validate packaging, source traceability, all 12 task types, evaluati
 - [Roadmap](docs/ROADMAP.md)
 - [Product and ecosystem strategy](docs/PRODUCT-STRATEGY.md)
 - [Plugin packaging](docs/PLUGIN-PACKAGING.md)
+- [Brand system](docs/brand.md)
 - [Contributing](CONTRIBUTING.md)
 
 ## License

@@ -54,7 +54,7 @@ class RepositoryContractTests(unittest.TestCase):
         match = re.match(r"\A---\n(.*?)\n---\n", skill, re.DOTALL)
         self.assertIsNotNone(match, "SKILL.md must start with YAML frontmatter")
         frontmatter = match.group(1)
-        self.assertRegex(frontmatter, r"(?m)^name: english-test-prep-coach$")
+        self.assertRegex(frontmatter, r"(?m)^name: bardora$")
         self.assertRegex(frontmatter, r"(?m)^description: .+")
         self.assertNotIn("TODO", skill)
 
@@ -499,6 +499,7 @@ class RepositoryContractTests(unittest.TestCase):
             "evaluations/speaking-2026-10-12.md",
             "evaluations/learning-intelligence-2026-10-12.md",
             "evaluations/write-an-email-2026-10-12.md",
+            "docs/brand.md",
             "references/feedback-contract.md",
             "references/learner-state.md",
             "references/learning-intelligence.md",
@@ -532,6 +533,10 @@ class RepositoryContractTests(unittest.TestCase):
             "scripts/check_originality.py",
             "scripts/build_plugin_archive.py",
             "skills/coach/SKILL.md",
+            "assets/brand/bardora-mark.svg",
+            "assets/brand/bardora-icon.svg",
+            "assets/brand/bardora-mark-mono.svg",
+            "assets/brand/bardora-lockup.svg",
         }
         missing = sorted(path for path in required if not (ROOT / path).is_file())
         self.assertEqual([], missing)
