@@ -21,7 +21,7 @@ class PluginPackageTests(unittest.TestCase):
 
     def test_manifests_share_identity_and_version(self):
         manifests = [self.manifest(path) for path in MANIFEST_PATHS]
-        self.assertEqual({"english-test-prep-coach"}, {item["name"] for item in manifests})
+        self.assertEqual({"bardora"}, {item["name"] for item in manifests})
         self.assertEqual({"0.1.0"}, {item["version"] for item in manifests})
         for manifest in manifests:
             self.assertEqual("Apache-2.0", manifest["license"])
@@ -37,7 +37,7 @@ class PluginPackageTests(unittest.TestCase):
             portable["$schema"],
         )
         self.assertEqual("./skills/", codex["skills"])
-        self.assertEqual("English Test Prep Coach", codex["interface"]["displayName"])
+        self.assertEqual("Bardora", codex["interface"]["displayName"])
         self.assertIn("keywords", claude)
 
     def test_plugin_entry_points_to_canonical_skill(self):

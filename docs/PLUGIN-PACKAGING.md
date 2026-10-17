@@ -16,7 +16,7 @@ Run:
 python3 scripts/build_plugin_archive.py
 ```
 
-The result is `dist/english-test-prep-coach-0.1.0.zip`. The archive is deterministic and contains only manifests, canonical coaching sources, documentation, schemas, and license files. Generated archives stay outside version control.
+The result is `dist/bardora-0.1.0.zip`. The archive is deterministic and contains only manifests, canonical coaching sources, documentation, schemas, and license files. Generated archives stay outside version control.
 
 ## Validate for Codex
 
@@ -38,7 +38,7 @@ claude plugin validate . --strict
 claude --plugin-dir .
 ```
 
-In that session, invoke `/english-test-prep-coach:coach` or make a relevant coaching request and verify model invocation. Use `/reload-plugins` after local edits.
+In that session, invoke `/bardora:coach` or make a relevant coaching request and verify model invocation. Use `/reload-plugins` after local edits.
 
 ## Version rule
 

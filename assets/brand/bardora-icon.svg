@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Bardora compact icon</title>
+  <desc id="desc">A simplified Scholar Portal mark designed to remain clear at small sizes.</desc>
+  <g fill="none" stroke-linecap="butt" stroke-linejoin="round">
+    <path d="M228 56A200 200 0 0 0 228 456" stroke="#111820" stroke-width="84"/>
+    <path d="M284 56A200 200 0 0 1 284 456" stroke="#466272" stroke-width="84"/>
+    <path d="M236 160h46a48 48 0 0 1 0 96h-46" stroke="#263640" stroke-width="52"/>
+    <path d="M236 256h52a48 48 0 0 1 0 96h-52" stroke="#263640" stroke-width="52"/>
+  </g>
+</svg>

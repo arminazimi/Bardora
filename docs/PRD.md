@@ -2,9 +2,9 @@
 
 ## Product
 
-This repository is the working home of a worldwide, open-source Agent Skill for preparation aligned with the TOEFL iBT® test format effective January 21, 2026. It provides original practice, formative feedback, strategy, and structured improvement loops across all four sections.
+**Bardora** is a worldwide, open-source Agent Skill for preparation aligned with the TOEFL iBT® test format effective January 21, 2026. It provides original practice, formative feedback, strategy, and structured improvement loops across all four sections. Its brand promise is: **The modern art of English mastery.**
 
-An independent public brand must replace the current repository identifier before v1.0 because ETS trademark guidance restricts use of ETS marks in product and domain names.
+Bardora is the independent public product name. The existing repository slug remains a temporary technical identifier and must be migrated separately because ETS trademark guidance restricts use of ETS marks in product and domain names.
 
 ## Problem
 
@@ -117,7 +117,7 @@ The coach confirms time and modality constraints, samples relevant task types, r
 
 ## Open decisions
 
-- What independent public brand should replace the working repository identifier?
+- When should the repository slug migrate to the Bardora name, and which redirects are required?
 - Which qualitative or numeric practice scale should be used per task after sufficient validation?
 - Which audio-capable agent environments should receive maintained Speaking adapters for v1.0?
 - Which agent environments will receive maintained installation adapters for v1.0?
